@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MarketSpace | Transactions</title>
+
+   <link rel="stylesheet" type="text/css" href="css/navbar.css">
+   <link rel="stylesheet" type="text/css" href="css/trans.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+   <script src="js/main-out.js" defer></script>
+   <script src="js/trans.js" defer></script>
+   <script src="js/filter.js" defer></script>
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+   <link rel="icon" href="img/Logo.svg">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="mobileHeader">
+            <a href="home2.html" class="logo">
+                <i class="fa-solid fa-shop"></i>
+                <span class="company-name">
+                    <span class="highlight">M</span>arket<span class="highlight">S</span>pace
+                </span>
+            </a>
+            <button onclick="openMenu()" class="hamburger">&#8801;</button>
+        </div>
+    
+        <nav class="menu">
+            <ul class="nav-list">
+                <li class="nav-listItem header-icon">
+                    <a href="messages.html" class="icon-envelope"><i class="fa-solid fa-envelope"></i></a>
+                </li>
+    
+                <li class="header-icon dropdown">
+                    <a href="#" class="icon-bell"><i class="fa-solid fa-bell"></i></a>
+                    <div class="dropdown-content notifications">
+                        <div class="notification-item">
+                            <img src="img/user1.png" alt="User">
+                            <div class="notification-info">
+                                <p><strong>Transaction:</strong> Seller Marked the item as sold.</p>
+                            </div>
+                            <button class="delete-notification">X</button>
+                        </div>
+        
+                        <div class="notification-item">
+                            <img src="img/user2.png" alt="User">
+                            <div class="notification-info">
+                                <p><strong>Message:</strong> Seller1 sent you a message.</p>
+                            </div>
+                            <button class="delete-notification">X</button>
+                        </div>
+                    </div>
+                </li>
+    
+                <li class="header-icon dropdown">
+                    <a href="#" class="icon-profile"><i class="fa-solid fa-user"></i></a>
+                        <div class="dropdown-content">
+                            <a class="profile-opt" href="userAcc.html">Account</a>
+                            <a class="profile-opt" href="trans2.html">Transactions</a>
+                            <a class="profile-opt" href="signin.html">Logout</a>
+                        </div>
+                </li>
+    
+                <li class="header-icon">
+                    <a href="about.html" class="icon-about"><i class="fa-solid fa-circle-info"></i></a>
+                </li>
+    
+            </ul>
+        </nav>
+    
+      </header>
+
+
+    <div class="transaction-container">
+        <div class="header-container">
+            <h1>Transactions</h1>
+            <button onclick="openFilter()" class="filter-burger">Filter &#x25BC;</button>
+        </div>
+
+        <div class="filter">
+            <div class="filter-box">
+                <div class="filter-section">
+                    <label for="date">Date:</label>
+                    <input type="month" name="date" id="date" class="custom-month-input">
+                </div>
+    
+                <div class="filter-section">
+                    <label for="budget">Budget:</label>
+                    <select id="budget" name="budget">
+                        <option value="budget1">Php 0.00 - Php 500.00</option>
+                        <option value="budget2">Php 501.00 - Php 1,000.00</option>
+                        <option value="budget3">Php 1,001.00 - Php 1,500.00</option>
+                        <option value="budget4">Php 1,501.00 - Php 2,000.00</option>
+                        <option value="budget5">Php 2,001.00 - Php 2,500.00</option>
+                        <option value="budget6">Php 2,501.00 - Php 3,000.00</option>
+                        <option value="budget7">Above Php 3,001.00</option>
+                    </select>
+                </div>
+    
+                <div class="filter-section">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category">
+                        <option value="category1">Electronics</option>
+                        <option value="category2">Fashion</option>
+                        <option value="category3">Home and Living</option>
+                        <option value="category4">Beauty and Personal Care</option>
+                        <option value="category5">Sports and Outdoors</option>
+                        <option value="category6">Toys and Games</option>
+                        <option value="category7">Books and Stationery</option>
+                        <option value="category8">Health and Wellness</option>
+                        <option value="category9">Automotive</option>
+                        <option value="category10">Pet Supplies</option>
+                        <option value="category11">Jewelry and Watches</option>
+                        <option value="category12">Baby and Kids</option>
+                        <option value="category13">Food and Beverages</option>
+                        <option value="category14">Appliance</option>
+                        <option value="category15">Gift and Occasions</option>
+                    </select>
+                </div>
+    
+                <div class="filter-section">
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="status1">Pending</option>
+                        <option value="status2">Processing</option>
+                        <option value="status3">Completed</option>
+                        <option value="status4">Cancelled</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="transactions">
+            <div class="transaction-cards">
+                <div class="trans">
+                    <div class="trans-img">
+                        <img src="img/products/bunk1.png" alt="Item 1" style="width: 100%;">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3>Bunk Bed</h3>
+                            <p>Buyer: Hannah</p>
+                            <p>Amount: Php 3,550.00</p>
+                            <p class="status">Status: Pending</p>
+                        </div>
+                        <div class="trans-btns">
+                            <button class="mark_as_sold" onclick="handleMarkAsSold(this)">Item Sold</button>
+                            <button class="cancel" onclick="handleCancel(this)">Cancel</button>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="trans-done">
+                    <div class="trans-img">
+                        <img src="img/products/tennis1.png" alt="Item 1" style="width: 100%;">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3>Tennis Materials</h3>
+                            <p>Buyer: Joanna</p>
+                            <p>Amount: Php 1,750.00</p>
+                            <p>Status: SOLD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-left">
+        <p>&copy; 2024 MarketSpace. All rights reserved.</p>
+        </div>
+
+        <div class="footer-right">
+        <p>Follow us in</p>
+        <a href="https://www.facebook.com/" target="_blank"><img src="img/fb_logo.png" alt="fb"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="img/insta_logo.png" alt="insta"></a>
+        <a href="https://twitter.com/" target="_blank"><img src="img/x_logo.png" alt="x"></a>
+        <a href="https://www.tiktok.com/" target="_blank"><img src="img/tiktok_logo.png" alt="tiktok"></a>
+        </div>  
+    </footer>
+
+</body>
+</html>

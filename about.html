@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarketSpace | About us</title>
+
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <script src="js/main.js" defer></script>
+  <script src="js/about.js" defer></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
+  <link rel="icon" href="img/Logo.svg">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="mobileHeader">
+        <a href="home2.html" class="logo">
+            <i class="fa-solid fa-shop"></i>
+            <span class="company-name">
+                <span class="highlight">M</span>arket<span class="highlight">S</span>pace
+            </span>
+        </a>
+        <button onclick="openMenu()" class="hamburger">&#8801;</button>
+    </div>
+
+    <nav class="menu">
+        <ul class="nav-list">
+            <li class="nav-listItem header-icon">
+                <a href="messages.html" class="icon-envelope"><i class="fa-solid fa-envelope"></i></a>
+            </li>
+
+            <li class="header-icon dropdown">
+                <a href="#" class="icon-bell"><i class="fa-solid fa-bell"></i></a>
+                <div class="dropdown-content notifications">
+                    <div class="notification-item">
+                        <img src="img/user1.png" alt="User">
+                        <div class="notification-info">
+                            <p><strong>Transaction:</strong> Seller Marked the item as sold.</p>
+                        </div>
+                        <button class="delete-notification">X</button>
+                    </div>
+    
+                    <div class="notification-item">
+                        <img src="img/user2.png" alt="User">
+                        <div class="notification-info">
+                            <p><strong>Message:</strong> Seller1 sent you a message.</p>
+                        </div>
+                        <button class="delete-notification">X</button>
+                    </div>
+                </div>
+            </li>
+
+            <li class="header-icon dropdown">
+                <a href="#" class="icon-profile"><i class="fa-solid fa-user"></i></a>
+                    <div class="dropdown-content">
+                        <a class="profile-opt" href="userAcc.html">Account</a>
+                        <a class="profile-opt" href="trans2.html">Transactions</a>
+                        <a class="profile-opt" href="signin.html">Logout</a>
+                    </div>
+            </li>
+
+            <li class="header-icon">
+                <a href="about.html" class="icon-about"><i class="fa-solid fa-circle-info"></i></a>
+            </li>
+
+        </ul>
+    </nav>
+
+  </header>
+
+  <div class="about-us-container">
+    <div class="about-cont">
+      <div class="aboutus-text-container">
+        <h1>Welcome to MarketSpace:</h1>
+        <h2>Connecting Buyers and Sellers for Great Deals!</h2>
+      </div>
+    
+      <div class="aboutus-img-conatiner">
+        <img src="img/pic1.png" alt="Header Image">
+      </div>
+    </div>
+    
+    <div class="aboutus-prompt-container">
+      <div class="prompt-img">
+        <img src="img/pic2.png" alt="Prompt Image">
+      </div>
+
+      <div class="prompt">
+        <h1> About us </h1>
+        <h2>Shopping made personal</h2>
+        <p>At MarketSpace, we've reimagined the way people discover and engage in the world of e-commerce. We're not just a platform; we're a dynamic community where buyers and sellers come together to explore incredible deals and unique finds. Our mission is simple: to provide a space where your shopping experience is defined by direct communication, unrivaled choice, and unbeatable deals.</p>
+        <p>As the go-to destination for savvy shoppers and entrepreneurial sellers alike, Marketplace facilitates conversations and deal negotiations without the hassle of managing payments or shipments. We believe in the power of connection, and our platform is designed to empower you to discover the perfect items and engage in meaningful conversations with sellers.</p>
+      </div>
+
+    </div>
+
+    <div class="inquiry-container">
+      <div class="inquiry-form-conatainer">
+        <form class="inquiry-form" id="inquire-form" onsubmit="inquire(); return false;">
+          <h1>Ask us Anything!</h1>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+
+          <input type="submit" name="submit" class="button-link" value="Submit">
+
+        </form>
+
+        <img src="img/inquiry.png" alt="Inquiry Image">
+      </div>
+    </div>
+
+  </div>
+
+
+  <footer class="footer">
+    <div class="footer-left">
+       <p>&copy; 2024 MarketSpace. All rights reserved.</p>
+    </div>
+
+    <div class="footer-right">
+       <p>Follow us in</p>
+       <a href="https://www.facebook.com/" target="_blank"><img src="img/fb_logo.png" alt="fb"></a>
+       <a href="https://www.instagram.com/" target="_blank"><img src="img/insta_logo.png" alt="insta"></a>
+       <a href="https://twitter.com/" target="_blank"><img src="img/x_logo.png" alt="x"></a>
+       <a href="https://www.tiktok.com/" target="_blank"><img src="img/tiktok_logo.png" alt="tiktok"></a>
+    </div>  
+ </footer>
+
+</body>
+</html

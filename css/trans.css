@@ -1,0 +1,376 @@
+.transaction-container {
+    position: relative;
+    margin: 4vw;
+    text-align: center;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.header-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    margin: 0px;
+    color: #6D86D9;
+    text-align: center;
+}
+
+/*FILTER*/
+.filter-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background-color: #6D86D9;
+    border-radius: 5px;
+    border: 2px solid #6D86D9; 
+    max-width: 80%;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: #F1F4F5;
+}
+
+.filter-section {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.filter-section label {
+    margin-right: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.filter-box select {
+    width: 65%;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    appearance: none; 
+    -webkit-appearance: none; 
+    background-color: #6D86D9;
+    color: #F1F4F5;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0px;
+    text-align: center;
+}
+
+.filter-box option {
+    background-color: #F1F4F5; 
+    color: #333;
+}
+
+.filter-box select:focus {
+    outline: none;
+    border: 2px solid #6D86D9; 
+}
+
+
+.filter-box-buyer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+    margin-bottom: 2.6vw;
+    margin-top: 2.6vw;
+}
+
+.filter-section-buyer {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    padding: 1vw;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #6D86D9;
+    color: #F1F4F5;
+}
+
+.filter-section-buyer label {
+    margin-right: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.custom-month-input {
+    padding: 8px;
+    border: 1px solid #6D86D9;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    outline:#6D86D9;
+}
+
+/*TRANSACTION CARDS*/
+.transactions {
+    margin: auto; 
+    margin-bottom: 5vw;
+    padding: 3vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.transaction-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    overflow: hidden;
+    margin-bottom: 10px; 
+}
+
+.trans {
+    display: flex;
+    width: 45%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fefefe;
+    padding: 20px;
+    margin: 15px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    margin-bottom: 60px;
+}
+
+.trans-done {
+    display: flex;
+    width: 45%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fefefe;
+    padding: 20px;
+    margin: 15px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    margin-bottom: 60px;
+    opacity: 50%;
+}
+
+
+.trans-img {
+    width: 40%;
+    position: relative;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.trans-img img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto; 
+}
+
+.trans-details{
+    width: 60%;
+    margin: 0;
+    text-align: center;
+}
+
+.details{
+    width:100%
+}
+
+.details h3 {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 20px;
+}
+
+.details p{
+    text-align: left;
+    font-size: 18px;
+    margin: 0px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.trans-btns {
+    display: flex; 
+    justify-content: space-between;
+    margin: 6px; 
+}
+
+.trans-btns button{
+    padding: 10px;
+    background-color: #6D86D9;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-top: 20px;
+    width: 40%;
+}
+
+.trans-btns button:hover{
+    background-color: #441FD6;
+}
+
+.filter-burger {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .mobileHeader {
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        background-color: #F1F4F5;
+        height: 15vw;
+        top: 0;
+    }
+
+    .hamburger {
+        font-size: 7vw;
+        padding: 1vw;
+        margin-right: 1vw;
+    }
+
+    .filter{
+        display: none;
+        background-color: #F1F4F5;
+        width: 100%;
+    }
+
+    .filter-burger {
+        display: flex;
+        flex-direction: column;
+        color:#F1F4F5;
+        background-color: #6D86D9;
+        border: none;
+        font-size: 4vw;
+        width: 30%;
+        padding: 1vw;
+        align-items: center;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .header-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .nav-list {
+        grid-auto-flow: row;
+        list-style-type: none;
+        row-gap: 20px;
+        column-gap: 0;
+        justify-items: center;
+    }
+
+    .header-container h1 {
+        font-size: 14vw;
+    }
+
+    .transaction-container {
+        margin-top: 25vw;
+    }
+
+    .filter-section-buyer {
+        width: 60%;
+    }
+
+    .trans, .trans-done {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 4vw;
+    }
+
+    .trans-img {
+        width: 100%;
+        margin: 0;
+    }
+
+    .trans-details{
+        width: 100%;
+    }
+
+    .details h3 {
+        text-align: center;
+        margin: 0;
+        padding-top: 3vw;
+        padding-bottom: 1vw;
+        font-size: 5vw;
+    }
+    
+    .details p{
+        margin: 0;
+        margin-bottom: 1vw;
+        font-size: 3vw;
+    }
+
+    .filter-section-buyer label {
+        font-size: 4.5vw;
+    }
+
+    .trans-btns {
+        flex-direction: column;
+        margin: 3vw; 
+    }
+
+    .trans-btns button{
+        padding: 1vw;
+        font-size: 3.5vw;
+        margin-top: 2vw;
+        width: 100%;
+    }
+
+    .filter-box {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        margin: auto;
+        padding: 4vw;
+        background-color: #F1F4F5;
+        border: none;
+        color: #333;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .filter-section{
+        width: 100%;
+        padding: 1vw;
+    }
+
+    .filter-section label {
+        font-size: 3.5vw;
+        width: 40%;
+    }
+
+    .filter-section select, 
+    .filter-section input {
+        font-size: 3.5vw;
+        width: 60%;
+        background-color: #F1F4F5;
+        color: #333;
+    }
+
+
+
+}
+  
+/* Tablet and Desktop Styles */
+@media screen and (min-width: 801px) {
+    .navbar {
+        padding: 1vw; 
+    }
+
+}

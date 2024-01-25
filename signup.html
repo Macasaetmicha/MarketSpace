@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MarketSpace | Sign Up</title>
+
+   <link rel="stylesheet" type="text/css" href="css/navbar.css">
+   <link rel="stylesheet" type="text/css" href="css/sign.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   
+   
+   <script src="js/main-out.js" defer></script>
+   <script src="js/script.js" defer></script>
+
+   <link rel="icon" href="img/Logo.svg">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="mobileHeader">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-shop"></i>
+                <span class="company-name">
+                    <span class="highlight">M</span>arket<span class="highlight">S</span>pace
+                </span>
+            </a>
+           <button onclick="openMenu()" class="hamburger">&#8801;</button>
+        </div>
+        <nav class="menu">
+           <ul class="nav-list">
+              <li class="nav-listItem"><a href="index.html">Home</a></li>
+              <li><a href="signin.html">Login</a></li>
+              <li><a href="signup.html">Start Selling</a></li>
+              <li><a href="about.html" class="icon-about"><i class="fa-solid fa-circle-info"></i></a></li>         
+           </ul>
+        </nav>
+    </header>
+
+<div class="signup-container">
+    <div class="signup-image">
+        <img src="img/pic3.png" alt="Signup Image">
+    </div>
+
+    <form class="signupForm" id="signupForm" onsubmit="signup(); return false;">
+        <div class="signup-form active" id="signupForm1">
+            <h2>Create an Account with Us!</h2>
+            <p>Unlock a world of exclusive deals, personalized recommendations, and seamless shopping. 
+              Create your account to enjoy a tailored shopping experience🛍️</p>
+            <div class="subform">
+              <label for="username">Username:</label>
+              <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      
+              <label for="email">Email:</label>
+              <input type="text" id="email" name="email" placeholder="Enter your email" required>
+      
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      
+              <label for="confirm">Confirm Password:</label>
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm password" required>
+              
+              <button type="button" id="s1Next" onclick="nextStep(2)">Next</button>
+            </div>
+      
+            <div class="login-prompt">
+               <p>Already have an account? <a href="signin.html">Log in</a></p>
+            </div>
+        </div>
+    
+        <div class="signup-form active" id="signupForm2" style="display: none;">
+            <h2>Create an Account with Us!</h2>
+            <p>Unlock a world of exclusive deals, personalized recommendations, and seamless shopping. 
+            Create your account to enjoy a tailored shopping experience🛍️</p>
+            <div class="subform">
+            <label for="fname"> First Name:</label>
+            <input type="text" id="fname" name="fname" placeholder="Enter your First Name" required>
+    
+            <label for="mname"> Middle Name:</label>
+            <input type="text" id="mname" name="mname" placeholder="Enter your Middle Name">
+            
+            <label for="lname"> Last Name:</label>
+            <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" required>
+    
+            <div class="radio-buttons">
+                <label for="gender">Gender:</label>
+                <label><input type="radio" name="account-type" value="male" required> Male</label>
+                <label><input type="radio" name="account-type" value="female" required> Female</label>
+                <label><input type="radio" name="account-type" value="other" required> Other</label>
+                <label><input type="radio" name="account-type" value="n/a" required> Prefer not to say</label>
+            </div>
+            
+            <label for="location">Location:</label>
+            <select id="location" name="location" required>
+                    <option value="location1">Manila City</option>
+                    <option value="location2">Quezon City</option>
+                    <option value="location3">Makati City</option>
+                    <option value="location4">Pasig City</option>
+                    <option value="location5">Mandaluyong City</option>
+                    <option value="location6">Cebu City</option>
+                    <option value="location7">Paranaque City</option>
+                    <option value="location8">Taguig City</option>
+                    <option value="location9">Las Pinas City</option>
+                    <option value="location10">Cavite City</option>
+                </select>  
+            
+            <button type="button" id="s1Previous" onclick="previousStep(1)">Previous</button>
+            <button type="button" id="s1Next" onclick="nextStep(3)">Next</button>
+            </div>
+    
+            <div class="login-prompt">
+                <p>Already have an account? <a href="signin.html">Log in</a></p>
+            </div>
+        </div>
+    
+        <div class="signup-form" id="signupForm3" style="display: none;">
+            <h2>Create an Account with Us!</h2>
+            <p>Unlock a world of exclusive deals, personalized recommendations, and seamless shopping. 
+            Create your account to enjoy a tailored shopping experience🛍️</p>
+            <div class="subform">
+                <h4 style="margin-bottom: 10px;">What Account type are you applying for?</h4>
+                <div class="account-type">
+                    <label>
+                        <input type="radio" name="account-type" value="seller" required onclick="showSellerForm()"> Seller
+                    </label>
+                    <label>
+                        <input type="radio" name="account-type" value="buyer" required onclick="showBuyerForm()"> Buyer
+                    </label>
+                </div>
+    
+                <div class="buyerForm" id="buyerForm" style="display: none;">
+                    <label for="cpNum">Contact Number:</label>
+                    <input type="text" id="cpNum_buyer" name="cpNum" placeholder="Enter your Contact Number" maxlength="11" oninput="formatPhoneNumber(this)" required>
+                    
+                    <label for="address">Address:</label>
+                    <input type="text" id="address_buyer" name="address" placeholder="Enter your Address" required>
+                </div>
+    
+                <div class="sellerForm" id="sellerForm" style="display: none;">
+                    <label for="cpNum">Contact Number:</label>
+                    <input type="text" id="cpNum_seller" name="cpNum" placeholder="Enter your Contact Number" maxlength="11" oninput="formatPhoneNumber(this)" required>
+                    
+                    <label for="address">Address:</label>
+                    <input type="text" id="address_seller" name="address" placeholder="Enter your Address" required>
+    
+                    <label for="shop-name">Shop Name:</label>
+                    <input type="text" id="shop-name" name="shop-name" placeholder="Enter your Shop Name" required>
+    
+                    <label for="description">Description:</label>
+                    <textarea type="text" id="description" name="description" placeholder="Enter a short Description for your shop" required></textarea>
+                </div>
+    
+                <button type="button" id="s1Previous" onclick="previousStep(2)">Previous</button>
+                <button type="button" id="s2Next" onclick="nextStep(4)">Next</button>
+            </div>
+    
+            <div class="login-prompt">
+                <p>Already have an account? <a href="signin.html">Log in</a></p>
+            </div>
+        </div>
+    
+        <div class="signup-form" id="signupForm4" style="display: none;">
+            <h2>Create an Account with Us!</h2>
+            <p>Unlock a world of exclusive deals, personalized recommendations, and seamless shopping. 
+            Create your account to enjoy a tailored shopping experience🛍️</p>
+            <div class="subform">
+                <label for="idType">ID Type:</label>
+                <select id="idType" name="idType" class="select">" required>
+                    <option value="passport">Passport</option>
+                    <option value="natID">National ID</option>
+                    <option value="drivLicense">Drivers License</option>
+                    <option value="sss">SSS/ UMID</option>
+                    <option value="philhealth">PhilHealth ID</option>
+                    <option value="voter">Voters ID</option>
+                    <option value="senior">Senior Citizen ID</option>
+                    <option value="ofw">OFW ID</option>
+                </select>
+    
+                <label for="idNumber">ID Number:</label>
+                <input type="text" id="idNumber" name="idNumber" placeholder="Enter your ID Number">
+    
+                <h4>Image of ID:</h4>
+                <div class="id-pic">
+                    <div class="file-input">
+                        <label for="front-image">Front of ID:</label>
+                        <input type="file" name="frontimage" id="front-image" accept="image/*" required>
+                    </div>
+                    <div class="file-input">
+                        <label for="back-image">Back of ID:</label>
+                        <input type="file" name="backimage" id="back-image" accept="image/*" required>
+                    </div>
+                </div>
+    
+                <button type="button" id="s2Previous" onclick="previousStep(3)">Previous</button>
+                <input type="submit" name="submit" class="button-link" value="Sign Up">
+                <div class="terms">
+                    <input type="checkbox" id="agreeCheckbox" name="agreeCheckbox" required>
+                    <label for="agreeCheckbox">
+                        By signing up, you agree to our <a class="signup-tc" onclick="showTermsDialog()" style="text-decoration: underline;">Terms & Condition</a>.
+                    </label>
+                </div>
+            </div>
+    
+            <div class="login-prompt">
+                <p>Already have an account? <a href="signin.html">Log in</a></p>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+    <dialog id="termsDialog">
+        <button class="close-button" id="closePrivacyDialog" onclick="closeTermsDialog()">&times;</button>
+        <h1>MarketSpace E-Commerce Site - Terms and Conditions</h1>
+        <h6>Welcome to MarketSpace! Before you start exploring the world of online shopping and 
+            connecting with fellow users, please read and understand the following terms and conditions. 
+            By signing up for MarketSpace, you agree to abide by these terms.</h6>
+        <br>
+        <hr>
+        <br>
+        <p><b>1. Introduction</b></p>
+        <p class="non-bold"> a. <b>MarketSpace:</b> Refers to the online platform provided by us, designed to facilitate the advertising and display of items and communication between users.
+            <br><br>b. <b>User:</b> Refers to individuals who sign up and use MarketSpace services.</p>
+
+        <br><p><b>2. Services Provided</b></p>
+        <p class="non-bold">a. MarketSpace exclusively provides a platform for users to advertise and display items.
+            <br><br>b. We do not handle payment transactions or shipping logistics. Users are responsible for arranging payments and shipping independently.</p>
+            
+        <br><p><b>3. User Responsibilities:</b></p>
+        <p class="non-bold"> a. Users are responsible for the accuracy and legitimacy of the information provided during signup and while using the platform.
+            <br><br>b. Users must not engage in any unlawful activities, including the sale of illegal items.</p>
+
+        <br><p><b>4. Confidentiality</b></p>
+        <p class="non-bold"> a. All information provided during the signup process and while using MarketSpace will be kept confidential.
+            <br><br>b.  Users are responsible for maintaining the security of their account credentials.</p>
+        
+        <br><p><b>5. Communication Between Users:</b></p>
+        <p class="non-bold"> a. Users can communicate with each other through the platform's messaging system.
+            <br><br>b.  All communication should adhere to respectful and lawful conduct. Harassment or abusive language is strictly prohibited.</p>
+                                
+        <br><p><b>6. Content Guidelines</b></p>
+        <p class="non-bold"> a. Users are responsible for the content they upload, including images and descriptions of items.
+            <br><br>b. Prohibited content includes but is not limited to offensive, fraudulent, or misleading information.</p>
+
+        <br><p><b>7.  Intellectual Property</b></p>
+        <p class="non-bold"> a. Users retain ownership of their intellectual property rights related to the content they upload.
+            <br><br>b. MarketSpace reserves the right to use aggregated and anonymized data for analytical purposes.</p>
+
+        <br><p><b>8. Termination of Account</b></p>
+        <p class="non-bold"> a. MarketSpace reserves the right to terminate or suspend user accounts for violations of these terms.</p>
+
+        <br><p><b>9. Limitation of Liability</b></p>
+        <p class="non-bold"> a. MarketSpace is not liable for any direct, indirect, or consequential damages arising from the use of the platform.
+            <br><br>b. We do not guarantee the accuracy, completeness, or reliability of user-generated content.</p>
+
+        <br><p><b>10. Changes to Terms and Conditions</b></p>
+        <p class="non-bold"> a. MarketSpace reserves the right to modify these terms at any time. Users will be notified of significant changes.</p>
+
+        <br><p><b>11. Governing Law</b></p>
+        <p class="non-bold"> a. These terms are governed by the laws of the Republic of the Philippines.</p>
+
+        <br><p>By signing up for MarketSpace, you acknowledge that you have read, understood, and agreed to these terms and conditions. If you do not agree, please do not proceed with the signup process.</p>
+    </dialog>
+
+    <footer class="footer">
+        <div class="footer-left">
+            <p>&copy; 2024 MarketSpace. All rights reserved.</p>
+        </div>
+
+        <div class="footer-right">
+            <p>Follow us in</p>
+            <a href="https://www.facebook.com/" target="_blank"><img src="img/fb_logo.png" alt="fb"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="img/insta_logo.png" alt="insta"></a>
+            <a href="https://twitter.com/" target="_blank"><img src="img/x_logo.png" alt="x"></a>
+            <a href="https://www.tiktok.com/" target="_blank"><img src="img/tiktok_logo.png" alt="tiktok"></a>
+        </div>  
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,587 @@
+.messages-container {
+    position: relative;
+    margin: 4vw;
+    text-align: center;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+.header-container h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    margin: 0px;
+    color: #6D86D9;
+    text-align: center;
+}
+
+/*FILTER*/
+.filter-box-messages {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    background-color: #6D86D9;
+    border-radius: 5px;
+    border: 2px solid #6D86D9; 
+    max-width: 50%;
+    margin: auto;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    color: #F1F4F5;
+}
+
+.filter-section-messages {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.filter-section-messages label {
+    margin-right: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+.filter-box-messages select {
+    width: 65%;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    appearance: none; 
+    -webkit-appearance: none; 
+    background-color: #6D86D9;
+    color: #F1F4F5;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0px;
+    text-align: center;
+}
+
+.filter-box-messages option {
+    background-color: #F1F4F5; 
+    color: #333;
+}
+
+.filter-box-messages select:focus {
+    outline: none;
+    border: 2px solid #6D86D9; 
+}
+
+
+.custom-month-input {
+    padding: 8px;
+    border: 1px solid #6D86D9;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    outline:#6D86D9;
+}
+
+/*MESSAGES*/
+.messages {
+    margin: auto; 
+    margin-top: 0px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.message-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    overflow: hidden;
+    margin-bottom: 10px;  
+}
+
+.msg {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fefefe;
+    padding: 15px;
+    margin: 15px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.seller{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.seller-info {
+    display: flex;
+    align-items: center;
+}
+
+.seller-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.seller-details {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin: 10px;
+}
+
+.seller-name {
+    margin-bottom: 0px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+.location {
+    margin-top: 0px;
+    font-weight: lighter;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.details{
+    width:100%
+}
+
+.details h3 {
+    margin: 5px 0;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.details p{
+    text-align: left;
+    font-size: 18px;
+    margin: 0px;
+    margin-left: 30px;
+}
+
+
+/*POP UP*/
+.msg-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F1F4F5;
+    /*padding: 20px;*/
+    z-index: 1000;
+    width: 35vw;
+    box-sizing: border-box;
+    text-align: center;
+    /*margin: 5px;*/
+    box-shadow: 2vw 2vw 12vw 3vw #ccc;
+    height: 40vw;
+}
+
+.msg-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px 30px;
+    background-color: #6D86D9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #333; 
+    width: auto;
+    height: 5vw;
+    margin-bottom: 1vw;
+}
+
+.msg-header h1 {
+    color: #F1F4F5;
+    font-size: 2vw;
+    font-family: 'Playfair Display', serif;
+    padding: 1vw;
+}
+
+.receiver{
+    display: flex;
+    align-items:center;
+}
+
+.receiver-info {
+    display: flex;
+    align-items: center;
+}
+
+.receiver-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 5px;
+    display: flex; 
+    align-items: center;
+}
+
+.receiver-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.receiver-name {
+    margin-bottom: 0px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #441FD6;
+    display: flex;
+    align-items: center;
+}
+
+.receiver-name h1 {
+    margin: 0; 
+    font-size: 30px; 
+}
+
+.close{
+    text-align: right;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #F1F4F5;
+}
+
+.message-section {
+    height: 25vw;
+    padding: 0 2.5vw;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.message-section #receipient,
+.message-section #user {
+  position: relative;
+  bottom: 0;
+  min-width: 1.5vw;
+  border: 0.15vw solid #777;
+  background-color: #fff;
+  border-radius: 0px 1.5vw 1.5vw 1.8vw;
+  padding: 1vw;
+  margin: 1.5vw 0;
+}
+
+.message-section #user {
+    border: 1.5px solid #000;
+    border-radius: 1.5vw 0vw 1.5vw 1.8vw;
+    background-color: #000;
+    float: right;
+}
+.message-section #user #user-response {
+    color: #fff;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.message-section .message {
+    color: #000;
+    clear: both;
+    line-height: 1.2vw;
+    font-size: 1.2vw;
+    padding: 8px;
+    position: relative;
+    margin: 8px 0;
+    max-width: 85%;
+    word-wrap: break-word;
+    z-index: 2;
+}
+
+#receipient-response {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+.input-section {
+    z-index: 1;
+    padding: 0 2.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    overflow: hidden;
+    height: 5vw;
+    width: 100%;
+}
+
+.input-section input {
+    background-color: #F1F4F5;
+    color: #000;
+    min-width: 0.5vw;
+    outline: none;
+    height: 3vw;
+    width: 26vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #441FD6 0.1vw;
+}
+
+.send {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin-left: 1.4vw;
+    margin-right: 0vw;
+    padding: 0;
+    position: relative;
+    outline: none;
+}
+
+.send .circle {
+    position: relative;
+    width: 4.8vw;
+    height: 4.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send .circle i {
+    font-size: 3vw;
+    margin-left: -1vw;
+    margin-top: 1vw;
+}
+
+.filter-burger {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .hamburger {
+        font-size: 7vw;
+        padding: 1vw;
+        margin-right: 1vw;
+    }
+
+    .filter{
+        display: none;
+        background-color: #F1F4F5;
+        width: 100%;
+    }
+
+    .filter-burger {
+        display: flex;
+        flex-direction: column;
+        color:#F1F4F5;
+        background-color: #6D86D9;
+        border: none;
+        font-size: 4vw;
+        width: 30%;
+        padding: 1vw;
+        align-items: center;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .header-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-box-messages {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+        margin: auto;
+        padding: 4vw;
+        background-color: #F1F4F5;
+        border: none;
+        color: #333;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .filter-section-messages{
+        width: 100%;
+        padding: 1vw;
+    }
+
+    .filter-section-messages label {
+        font-size: 3.5vw;
+        width: 40%;
+    }
+
+    .filter-section-messages select, 
+    .filter-section-messages input {
+        font-size: 3.5vw;
+        width: 60%;
+        background-color: #F1F4F5;
+        color: #333;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .nav-list {
+        grid-auto-flow: row;
+        list-style-type: none;
+        row-gap: 20px;
+        column-gap: 0;
+        justify-items: center;
+    }
+
+    .messages-container {
+        margin-top: 25vw;
+    }
+
+    .msg{
+        flex-direction: column-reverse;
+    }
+
+    .seller-info{
+        flex-direction: column-reverse;
+    }
+
+    .seller-details{
+        text-align: center;
+        margin: 0;
+    }
+
+    .seller-info img{
+        width: 70%;
+        height: auto;
+    }
+
+    .details h3{
+        margin: 0;
+        font-size: 4.5vw;
+        text-align: left;
+        margin-top: 3vw;
+    }
+
+    .details p{
+        margin: 0;
+        font-size: 4vw;
+        text-align: left ;
+    }
+
+    .seller-name{
+        font-size: 3vw;
+    }
+
+    .location{
+        margin: 0;
+        font-size: 3vw;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+
+    .messages{
+        padding: 0;
+        margin: 0;
+    }
+
+    .msg-popup{
+        max-height: none;
+        height: 70vh;
+        width: 80%;
+    }
+
+    .msg-header{
+        width: 100%;
+        height: 12%;
+        box-sizing: border-box;
+        padding: 1vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    .receiver-name h1 {
+        font-size: 5.5vw;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow:hidden;
+    }
+
+    .receiver{
+        overflow: hidden;
+        width: 90%;
+        height: 100%;
+    }
+
+    .receiver-info{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .receiver-info img{
+        width: auto;
+        height: auto;
+        box-sizing: border-box;
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+    }
+
+    .receiver-details{
+        width: 80%;
+    }
+
+    .receiver-link{
+        width: 20%;
+        justify-content: center;
+        margin: 0;
+        display: flex;
+    }
+
+    .input-section{
+        width: 100%;
+        box-sizing: border-box;
+        height: 8%;
+    }
+
+    .input-section input{
+        width: 90%;
+        font-size: 3.5vw;
+        height: auto;
+    }
+
+    .send {
+        width: 10%;
+    }
+    
+    .send .circle i{
+        font-size: 3vw;
+    }
+
+    .msg-content-wrapper{
+        height: calc(100% - 10px);
+    }
+
+    .message-section{
+        height: 75%;
+    }
+    
+    #receipient-response, #user-response{
+        font-size: 3.5vw;
+        line-height: normal
+    }
+}

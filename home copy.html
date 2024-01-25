@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>MarketSpace | Home</title>
+
+   <link rel="stylesheet" type="text/css" href="css/navbar.css">
+   <link rel="stylesheet" type="text/css" href="css/home.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha384-oD6nSvaB2zD5Iep8oH2IqleEmV7pCDfFd/nmPs3rHC7eFUCIB1a0CRRBMFP7dtn" crossorigin="anonymous">
+   
+   <script src="js/home.js" defer></script>
+   <script src="js/main-out.js" defer></script>
+   <script src="js/filter.js" defer></script>
+   
+   <link rel="icon" href="img/Logo.svg">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="mobileHeader">
+           <a href="home.html" class="logo">
+              <img src="img/Logo.png" alt="Logo">
+              <span class="company-name">
+                 <span class="highlight">M</span>arket<span class="highlight">S</span>pace
+              </span>
+           </a>
+           <button onclick="openMenu()" class="hamburger">&#8801;</button>
+        </div>
+        <nav class="menu">
+           <ul class="nav-list">
+              <li class="nav-listItem"><a href="home.html">Home</a></li>
+              <li><a href="signin.html">Login</a></li>
+              <li><a href="signup.html">Start Selling</a></li>
+              <li><a href="about.html" class="icon-about"><img src="img/about_logo.png" alt="About"></a></li>         
+           </ul>
+        </nav>
+     </header>
+
+     <div class="slideshow-container">
+        <div class="homeSlides fade">
+            <img src="img/slide1.png" style="width:100%">
+        </div>
+    
+        <div class="homeSlides fade">
+            <img src="img/slide2.png" style="width:100%">
+        </div>
+    
+        <div class="homeSlides fade">
+            <img src="img/slide4.png" style="width:100%">
+        </div>
+
+        <div class="homeSlides fade">
+            <img src="img/slide3.png" style="width:100%">
+        </div>
+    
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+
+     <div class="home-container">
+
+      <div class="search-container">
+          <input type="text" id="search" name="search" placeholder="Search..." class="search-input">
+          <button class="search-button">Search</button>
+          <button onclick="openFilter()" class="filter-burger">&#x25BC;</button>
+      </div>
+  
+      <div class="filter">
+        <div class="filter-box">
+            <div class="filter-section">
+                <label for="location">Location:</label>
+                <select id="location" name="location">
+                    <option value="location1">Manila City</option>
+                    <option value="location2">Quezon City</option>
+                    <option value="location3">Makati City</option>
+                    <option value="location4">Pasig City</option>
+                    <option value="location5">Mandaluyong City</option>
+                    <option value="location6">Cebu City</option>
+                    <option value="location7">Paranaque City</option>
+                    <option value="location8">Taguig City</option>
+                    <option value="location9">Las Pinas City</option>
+                    <option value="location10">Cavite City</option>
+                </select>
+            </div>
+        
+            <div class="filter-section">
+                <label for="budget">Budget:</label>
+                <select id="budget" name="budget">
+                    <option value="budget1">Php 0.00 - Php 500.00</option>
+                    <option value="budget2">Php 501.00 - Php 1,000.00</option>
+                    <option value="budget3">Php 1,001.00 - Php 1,500.00</option>
+                    <option value="budget4">Php 1,501.00 - Php 2,000.00</option>
+                    <option value="budget5">Php 2,001.00 - Php 2,500.00</option>
+                    <option value="budget6">Php 2,501.00 - Php 3,000.00</option>
+                    <option value="budget7">Above Php 3,001.00</option>
+                </select>
+            </div>
+        
+            <div class="filter-section">
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="category1">Electronics</option>
+                    <option value="category2">Fashion</option>
+                    <option value="category3">Home and Living</option>
+                    <option value="category4">Beauty and Personal Care</option>
+                    <option value="category5">Sports and Outdoors</option>
+                    <option value="category6">Toys and Games</option>
+                    <option value="category7">Books and Stationery</option>
+                    <option value="category8">Health and Wellness</option>
+                    <option value="category9">Automotive</option>
+                    <option value="category10">Pet Supplies</option>
+                    <option value="category11">Jewelry and Watches</option>
+                    <option value="category12">Baby and Kids</option>
+                    <option value="category13">Food and Beverages</option>
+                    <option value="category14">Appliance</option>
+                    <option value="category15">Gift and Occasions</option>
+                </select>
+            </div>
+    
+            <div class="filter-section">
+                <label for="condition">Condition:</label>
+                <select id="condition" name="condition">
+                    <option value="condition1">New</option>
+                    <option value="condition2">Like New</option>
+                    <option value="condition3">Refurbished</option>
+                    <option value="condition4">Used - Excellent</option>
+                    <option value="condition5">Used - Good</option>
+                    <option value="condition6">Used - Fair</option>
+                    <option value="condition7">Not Working</option>
+                    <option value="condition8">Open Box</option>
+                    <option value="condition9">Damaged</option>
+                    <option value="condition10">Missing Part</option>
+                    <option value="condition11">Custom/Handmade</option>
+                    <option value="condition12">Vintage</option>
+                </select>
+            </div>
+    
+        </div>
+    </div>
+  
+    <div class="detail_container">
+        <div class="new-items-container">
+            <div class="header-container">
+                <h1>New Items</h1>
+            </div>
+    
+            <div class="new-item-cards">
+                <div class="new-item-card item-card" id="newCard1" data-product-id="2">
+                    <img src="" alt="">
+                    <h3></h3>
+                    <p></p>
+                    <p></p>
+                    <h3 class="price"></h3>
+                </div>
+            </div>
+        </div>
+    
+        <div class="regular-items-container">
+            <div class="regular-item-cards">
+                <div class="regular-item-card item-card" id="regularCard1" data-product-id="1">
+                    <img src="" alt="Item 1">
+                    <h3></h3>
+                    <p></p>
+                    <p></p>
+                    <h3 class="price"></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="item-details-popup" id="itemDetailsPopup">
+        <div class="popup-header">
+        <button class="close-button" onclick="closeItemDetails()" id="closePopupButton">&times;</button>
+        </div>
+        <div class="popup-content-wrapper" id="popupContentWrapper">
+        <div class="pop-up-slideshow-container">
+            <div class="popUpSlides fade">
+                <img src="img/table1.png" alt="Item 1" style="width: 100%;">
+            </div>
+
+            <div class="popUpSlides fade">
+                <img src="img/table2.png" alt="Item 2" style="width: 100%;">
+            </div>
+            
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        <div class="product-details">
+            
+            <div class="product-info">
+                <h3 class="product-name">Living Room Table</h3>
+                <h4 class="price">Php 1,350.00</h4>
+            </div>
+        
+            <div class="left-details">
+                <p class="prod-detail">Qty: 5</p>
+                <p class="prod-detail">Category: Home and Living</p>
+                <p class="prod-detail">Condition: New</p>
+                <p class="prod-detail">Brand/Manufacturer: Ikea</p>
+                <p class="prod-detail">Available for Bulk Order: No</p>
+                <p class="prod-detail">Product Description: <br>Introducing our stylish and functional Living Room TV Console Table – 
+                    the perfect centerpiece for your entertainment space. Crafted with a sleek blend of modern design and 
+                    practicality, this table seamlessly combines form and function. Its spacious surface accommodates your 
+                    television, while the two-tier shelving provides ample space for media devices, gaming consoles, or 
+                    decorative items. The clean lines and premium materials ensure a contemporary aesthetic that effortlessly 
+                    complements any living room decor. Elevate your home entertainment experience with this versatile and chic TV 
+                    console table, where style meets convenience.</p>
+            </div>
+        
+            <div class="right-details">
+                <div class="seller-info">
+                    <div class="seller-details">
+                        <a href="view_user2.html" class="seller-name seller-name">
+                            <p class="seller-name">Seller Name</p>
+                        </a>
+                        <p class="location">Makati City</p>
+                    </div>
+                    <a href="view_user2.html" class="seller-link">
+                        <img src="img/user5.png" alt="Seller Image">
+                    </a>
+                </div>
+            </div>
+        
+            <button class="popup-button">I am Interested!</button>
+        </div>
+        </div>
+    </div>
+  </div>
+
+
+    <footer class="footer">
+        <div class="footer-left">
+           <p>&copy; 2024 MarketSpace. All rights reserved.</p>
+        </div>
+
+        <div class="footer-right">
+           <p>Follow us in</p>
+           <a href="https://www.facebook.com/" target="_blank"><img src="img/fb_logo.png" alt="fb"></a>
+           <a href="https://www.instagram.com/" target="_blank"><img src="img/insta_logo.png" alt="insta"></a>
+           <a href="https://twitter.com/" target="_blank"><img src="img/x_logo.png" alt="x"></a>
+           <a href="https://www.tiktok.com/" target="_blank"><img src="img/tiktok_logo.png" alt="tiktok"></a>
+        </div>  
+  </footer>
+
+</body>
+</html>
+
+
+/*HEADER SLIDESHOW*/
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("homeSlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+/*POP UP*/
+/*POPUP SLIDESHOW*/
+let popUpslideIndex = 1;
+showProd(popUpslideIndex);
+
+function changeSlide(n) {
+  showProd(popUpslideIndex += n);
+}
+
+function currentSlide(n) {
+  showProd(popUpslideIndex = n);
+}
+
+function showProd(n) {
+  let i;
+  let slides = document.getElementsByClassName("popUpSlides");
+  if (n > slides.length) {popUpslideIndex = 1}
+  if (n < 1) {popUpslideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[popUpslideIndex-1].style.display = "block";
+}
+
+var productDetails = {
+  "1": {
+    thumbnail: "img/prod3.png",
+    images: ["img/prod1.png", "img/prod3.png"],
+    name: "Lampshade",
+    location: "Makati",
+    qty: "3",
+    category: "Home and Living",
+    condition: "New",
+    brand: "Ikea",
+    bulk: "No",
+    descrip: "Elevate your space with our Aurora Table Lamp. Modern and minimalist, it brings style and functionality together. Enjoy adjustable LED lighting and touch controls for a seamless experience. Upgrade your ambiance effortlessly.",
+    price: "Php 350.00",
+    seller: "Seller 1",
+    seller_loc: "Makati",
+    seller_pic: "img/user2.png"
+  },
+  "2": {
+    thumbnail: "img/prod4.png",
+    images: ["img/prod2.png", "img/prod4.png"],
+    name: "Game Console",
+    location: "Laguna",
+    qty: "5",
+    category: "Electronics",
+    condition: "New",
+    brand: "Nintendo",
+    bulk: "No",
+    descrip: "Elevate your space with our Aurora Table Lamp. Modern and minimalist, it brings style and functionality together. Enjoy adjustable LED lighting and touch controls for a seamless experience. Upgrade your ambiance effortlessly.",
+    price: "Php 600.00",
+    seller: "Seller 3",
+    seller_loc: "Laguna",
+    seller_pic: "img/user3.png"
+  },
+};
+
+document.addEventListener('DOMContentLoaded', function(){
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+        var productId = card.getAttribute('data-product-id');
+        showItemDetails(productId);
+    });
+  });
+
+
+  function showItemDetails(productId) {
+    var details = getItemDetailsById(productId);
+    var cardContentWrapper = document.querySelectorAll('.item-card');
+    var images = details.images || []; // Get the images array from product details or an empty array if not present
+
+   
+  }
+
+  function getItemDetailsById(productId) {
+    return productDetails[productId] || {};
+  }
+
+  var productId = card.getAttribute('data-product-id');
+  showItemDetails(productId);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var cardContentWrapper = document.querySelectorAll('.item-card');
+
+  cardContentWrapper.innerHTML = `
+    <img src="${details.thumbnail}" alt="${details.name}">
+    <h3>${details.name}</h3>
+    <p>${details.seller_loc}</p>
+    <p>${details.qty}</p>
+    <h3 class="price">${details.price}</h3>
+  `
+
+  function getItemDetailsById(productId) {
+      return productDetails[productId] || {};
+  }
+
+  function closeItemDetails() {
+      itemDetailsPopup.style.display = 'none';
+  }
+
+  // Example: Attach click event to card
+  var cards = document.querySelectorAll('.item-card');
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+        var productId = card.getAttribute('data-product-id');
+        showItemDetails(productId);
+    });
+  });
+
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var itemDetailsPopup = document.getElementById('itemDetailsPopup');
+  var closePopupButton = document.getElementById('closePopupButton');
+  var popupContentWrapper = document.getElementById('popupContentWrapper');
+
+  function showItemDetails(productId) {
+      var details = getItemDetailsById(productId);
+      var images = details.images || []; // Get the images array from product details or an empty array if not present
+
+      // Dynamically generate slides for each image
+      var slidesHtml = images.map(function (image) {
+          return `<div class="popUpSlides fade">
+                      <img src="${image}" alt="${details.name}" style="width: 100%;">
+                  </div>`;
+      }).join('');
+
+      popupContentWrapper.innerHTML = `
+          <div class="pop-up-slideshow-container">
+            ${slidesHtml}
+        
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+          </div>
+          <div class="product-details">
+              <div class="product-info">
+                  <h3 class="product-name">${details.name}</h3>
+                  <h4 class="price">${details.price}</h4>
+              </div>
+              <div class="left-details">
+                  <p class="prod-detail">Qty: ${details.qty}</p>
+                  <p class="prod-detail">Category: ${details.category}</p>
+                  <p class="prod-detail">Brand/Manufacturer: ${details.brand}</p>
+                  <p class="prod-detail">Available for Bulk Order: ${details.bulk}</p>
+                  <p class="prod-detail">Product Description: ${details.descrip}</p>
+              </div>
+              
+              <div class="right-details">
+                  <div class="seller-info">
+                      <div class="seller-details">
+                          <a href="view_user2.html" class="seller-name seller-name">
+                              <p class="seller-name">${details.seller}</p>
+                          </a>
+                          <p class="location">${details.seller_loc}</p>
+                      </div>
+                      <a href="view_user2.html" class="seller-link">
+                          <img src=${details.seller_pic} alt="Seller Image">
+                      </a>
+                  </div>
+              </div>
+
+              <button class="popup-button">I am Interested!</button>
+          </div>
+      `;
+      itemDetailsPopup.style.display = 'block';
+
+      if (closePopupButton) {
+          closePopupButton.addEventListener('click', function() {
+              closeItemDetails();
+          });
+      } else {
+          console.error("closePopupButton not found");
+      }
+  }
+
+  function getItemDetailsById(productId) {
+      return productDetails[productId] || {};
+  }
+
+  function closeItemDetails() {
+      itemDetailsPopup.style.display = 'none';
+  }
+
+  // Example: Attach click event to card
+  var cards = document.querySelectorAll('.item-card');
+  cards.forEach(function (card) {
+    card.addEventListener('click', function () {
+        var productId = card.getAttribute('data-product-id');
+        showItemDetails(productId);
+    });
+  });
+
+});

@@ -38,7 +38,9 @@ var productDetails = {
     price: "Php 3,450.00",
     seller: "John Doe",
     seller_loc: "Quezon City",
-    seller_pic: "img/user3.png"
+    seller_pic: "img/user3.png",
+    date: "01/01/24",
+    status: "Pending"
   },
   "2": {
     thumbnail: "img/products/chair1.png",
@@ -54,7 +56,9 @@ var productDetails = {
     price: "Php 700.00",
     seller: "Marys Furniture",
     seller_loc: "Cebu City",
-    seller_pic: "img/user2.png"
+    seller_pic: "img/user2.png",
+    date: "01/03/24",
+    status: "Pending"
   },
   "3": {
     thumbnail: "img/products/van1.png",
@@ -70,7 +74,9 @@ var productDetails = {
     price: "Php 300,000.00",
     seller: "Joe",
     seller_loc: "Mandalutong City",
-    seller_pic: "img/user1.png"
+    seller_pic: "img/user1.png",
+    date: "01/21/24",
+    status: "SOLD"
   },
   "4": {
     thumbnail: "img/products/tv1.png",
@@ -86,7 +92,9 @@ var productDetails = {
     price: "Php 2,500.00",
     seller: "Honeylette",
     seller_loc: "Pasig City",
-    seller_pic: "img/user5.png"
+    seller_pic: "img/user5.png",
+    date: "01/22/24",
+    status: "SOLD"
   },
   "5": {
     thumbnail: "img/products/tool1.png",
@@ -102,7 +110,9 @@ var productDetails = {
     price: "Php 500.00",
     seller: "Monica",
     seller_loc: "Taguig City",
-    seller_pic: "img/user4.png"
+    seller_pic: "img/user4.png",
+    date: "01/15/24",
+    status: "Cancelled"
   },
   "6": {
     thumbnail: "img/products/bed1.png",
@@ -118,7 +128,9 @@ var productDetails = {
     price: "Php 1,200.00",
     seller: "Samantha Diaz",
     seller_loc: "Quezon City",
-    seller_pic: "img/user5.png"
+    seller_pic: "img/user5.png",
+    date: "01/24/24",
+    status: "Processing"
   },
   "7": {
     thumbnail: "img/products/earring1.png",
@@ -134,7 +146,9 @@ var productDetails = {
     price: "Php 5,750.00",
     seller: "Mary Rose Cruz",
     seller_loc: "Las Pinas City",
-    seller_pic: "img/user4.png"
+    seller_pic: "img/user4.png",
+    date: "12/29/24",
+    status: "SOLD"
   },
   "8": {
     thumbnail: "img/products/makeup1.png",
@@ -150,7 +164,9 @@ var productDetails = {
     price: "Php 1,200.00",
     seller: "Maria Delos Reyes",
     seller_loc: "Cavite City",
-    seller_pic: "img/user2.png"
+    seller_pic: "img/user2.png",
+    date: "01/22/24",
+    status: "Pending"
   },
   "9": {
     thumbnail: "img/products/shoes1.png",
@@ -166,7 +182,9 @@ var productDetails = {
     price: "Php 550.00",
     seller: "Jepoy",
     seller_loc: "Paranaque City",
-    seller_pic: "img/user1.png"
+    seller_pic: "img/user1.png",
+    date: "01/19/24",
+    status: "Pending"
   },
   "10": {
     thumbnail: "img/products/watergun1.png",
@@ -182,7 +200,9 @@ var productDetails = {
     price: "Php 340.00",
     seller: "Maria Jose",
     seller_loc: "Makati City",
-    seller_pic: "img/user5.png"
+    seller_pic: "img/user5.png",
+    date: "01/01/24",
+    status: "SOLD"
   },
   "11": {
     thumbnail: "img/products/book1.png",
@@ -198,7 +218,9 @@ var productDetails = {
     price: "Php 480.00",
     seller: "Consing Santos",
     seller_loc: "Pasig City",
-    seller_pic: "img/user4.png"
+    seller_pic: "img/user4.png",
+    date: "01/13/24",
+    status: "Cancelled"
   },
   "12": {
     thumbnail: "img/products/lamp1.png",
@@ -214,7 +236,9 @@ var productDetails = {
     price: "Php 320.00",
     seller: "JoJo Smith",
     seller_loc: "Cavite City",
-    seller_pic: "img/user2.png"
+    seller_pic: "img/user2.png",
+    date: "01/20/24",
+    status: "Processing"
   },
   "13": {
     thumbnail: "img/products/console1.png",
@@ -230,7 +254,9 @@ var productDetails = {
     price: "Php 390.00",
     seller: "Mark Reyes",
     seller_loc: "Mandaluyong City",
-    seller_pic: "img/user3.png"
+    seller_pic: "img/user3.png",
+    date: "01/14/24",
+    status: "Pending"
   },
   "14": {
     thumbnail: "img/products/bunk1.png",
@@ -246,7 +272,9 @@ var productDetails = {
     price: "Php 3,550.00",
     seller: "Hannah Grace Catig",
     seller_loc: "Manila City",
-    seller_pic: "img/user2.png"
+    seller_pic: "img/user2.png",
+    date: "12/01/24",
+    status: "SOLD"
   },
   "15": {
     thumbnail: "img/products/tennis1.png",
@@ -262,37 +290,66 @@ var productDetails = {
     price: "Php 1,750.00",
     seller: "Angia Fuasan",
     seller_loc: "Makati City",
-    seller_pic: "img/user2.png"
+    seller_pic: "img/user2.png",
+    date: "01/08/24",
+    status: "SOLD"
   },
 
 };
 
 document.addEventListener('DOMContentLoaded', function() {
-  var cards = document.querySelectorAll('.item-card');
+  var transCards = document.querySelectorAll('.trans-item-card');
+  var listedCards = document.querySelectorAll('.listed-item-card');
 
-  function showItemDetails(productId) {
+  function showItemDetails(productId, pageIdentifier) {
     var details = getItemDetailsById(productId);
     var cardContentWrapper = this;
     var images = details.images || [];
 
-    cardContentWrapper.innerHTML = `
-      <img src="${details.thumbnail}" alt="${details.name}">
-      <h3>${details.name}</h3>
-      <p>${details.location}</p>
-      <p>Quantity: ${details.qty}</p>
-      <h3 class="price">${details.price}</h3>
-    `;
+    // Customize content based on the page identifier
+    var content = '';
+    if (pageIdentifier === 'trans') {
+      content = `
+        <div class="trans-img">
+          <img src="${details.thumbnail}" alt="${details.name}">
+        </div>
+        <div class="trans-details">
+            <div class="details">
+              <h3>${details.name}</h3>
+              <p>Date: ${details.date}</p>
+              <p>Status: ${details.status}</p>
+              <h3 class="price">${details.price}</h3>
+            </div>
+        </div>
+      `;
+    } else if (pageIdentifier === 'listed') {
+      content = `
+        <img src="${details.thumbnail}" alt="${details.name}">
+        <h3>${details.name}</h3>
+        <p>${details.location}</p>
+        <p>Quantity: ${details.qty}</p>
+        <h3 class="price">${details.price}</h3>
+      `;
+    }
+
+    cardContentWrapper.innerHTML = content;
   }
 
   function getItemDetailsById(productId) {
     return productDetails[productId] || {};
   }
 
-  cards.forEach(function(card) {
+  transCards.forEach(function(card) {
     var productId = card.getAttribute('data-product-id');
-    showItemDetails.call(card, productId);
+    showItemDetails.call(card, productId, 'trans');
+  });
+
+  listedCards.forEach(function(card) {
+    var productId = card.getAttribute('data-product-id');
+    showItemDetails.call(card, productId, 'listed');
   });
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var itemDetailsPopup = document.getElementById('itemDetailsPopup');
@@ -383,15 +440,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  var currentItemCards = document.querySelectorAll('.current-item-card');
-
-  currentItemCards.forEach(function (card) {
-      card.addEventListener('click', function () {
-          // Redirect to the desired URL when a current-item-card is clicked
-          window.location.href = 'trans.html';
-      });
-  });
 });

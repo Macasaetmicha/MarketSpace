@@ -90,19 +90,28 @@
                 <label><input type="radio" name="account-type" value="n/a" required> Prefer not to say</label>
             </div>
             
-            <label for="location">Location:</label>
-            <select id="location" name="location" required>
-                    <option value="location1">Manila City</option>
-                    <option value="location2">Quezon City</option>
-                    <option value="location3">Makati City</option>
-                    <option value="location4">Pasig City</option>
-                    <option value="location5">Mandaluyong City</option>
-                    <option value="location6">Cebu City</option>
-                    <option value="location7">Paranaque City</option>
-                    <option value="location8">Taguig City</option>
-                    <option value="location9">Las Pinas City</option>
-                    <option value="location10">Cavite City</option>
-                </select>  
+            <div class="form-row">
+                <div class="detail1">
+                    <label for="bday"> Birthday:</label>
+                    <input type="date" id="bday" name="bday" placeholder="Enter your Birthdate" required>
+                </div>
+
+                <div class="detail2">
+                    <label for="location">Location:</label>
+                    <select id="location" name="location" required>
+                            <option value="location1">Manila City</option>
+                            <option value="location2">Quezon City</option>
+                            <option value="location3">Makati City</option>
+                            <option value="location4">Pasig City</option>
+                            <option value="location5">Mandaluyong City</option>
+                            <option value="location6">Cebu City</option>
+                            <option value="location7">Paranaque City</option>
+                            <option value="location8">Taguig City</option>
+                            <option value="location9">Las Pinas City</option>
+                            <option value="location10">Cavite City</option>
+                        </select>  
+                </div>
+            </div>
             
             <button type="button" id="s1Previous" onclick="previousStep(1)">Previous</button>
             <button type="button" id="s1Next" onclick="nextStep(3)">Next</button>
@@ -174,6 +183,7 @@
                     <option value="voter">Voters ID</option>
                     <option value="senior">Senior Citizen ID</option>
                     <option value="ofw">OFW ID</option>
+                    <option id="studentOpt" value="student">School ID</option>
                 </select>
     
                 <label for="idNumber">ID Number:</label>
@@ -252,11 +262,18 @@
         <br><p><b>9. Limitation of Liability</b></p>
         <p class="non-bold"> a. MarketSpace is not liable for any direct, indirect, or consequential damages arising from the use of the platform.
             <br><br>b. We do not guarantee the accuracy, completeness, or reliability of user-generated content.</p>
+        
+        <br><p><b>10. Minors' Sign-Up Process:</b></p>
+        <p class="non-bold"> a. Minors (individuals aged 15 and above, but below the legal age to enter into a binding contract) are allowed to sign up for MarketSpace.
+            <br><br>b. During the sign-up process, minors will be required to provide accurate information, including their date of birth.
+            <br><br>c. Minors will be prompted to seek parental consent, and as part of the verification process, they must submit a copy of their parent's ID.
+            <br><br>d. Upon submitting the required information, a virtual appointment with a company representative may be scheduled to confirm the sign-up and obtain additional parental consent.
+            <br><br>e. MarketSpace reserves the right to deny access to minors who fail to complete the verification process or do not provide the necessary parental consent.</p>
 
-        <br><p><b>10. Changes to Terms and Conditions</b></p>
+        <br><p><b>11. Changes to Terms and Conditions</b></p>
         <p class="non-bold"> a. MarketSpace reserves the right to modify these terms at any time. Users will be notified of significant changes.</p>
 
-        <br><p><b>11. Governing Law</b></p>
+        <br><p><b>12. Governing Law</b></p>
         <p class="non-bold"> a. These terms are governed by the laws of the Republic of the Philippines.</p>
 
         <br><p>By signing up for MarketSpace, you acknowledge that you have read, understood, and agreed to these terms and conditions. If you do not agree, please do not proceed with the signup process.</p>

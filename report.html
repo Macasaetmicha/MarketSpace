@@ -6,11 +6,13 @@
   <title>MarketSpace | User Account</title>
 
   <link rel="stylesheet" type="text/css" href="css/navbar.css">
-  <link rel="stylesheet" type="text/css" href="css/user.css">
+  <link rel="stylesheet" type="text/css" href="css/sign.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  
   <script src="js/main.js" defer></script>
-  <script src="js/user.js" defer></script>
+  <script src="js/report.js" defer></script>
   <script src="js/cookies.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
@@ -74,67 +76,48 @@
     
       </header>
 
+<div class="main-container">
+    <div class="report-container">
+        <div class="report-form">
+           <h2>Report User</h2>
+           <p>Thank you for using MarketSpace responsibly. If you believe a user is violating our community guidelines or engaging in inappropriate behavior, please use this form to report the user. Your feedback helps us maintain a safe and enjoyable environment for all users.</p>
+           <form class="report" id="reportForm" onsubmit="report(); return false;">
+                <label for="reportedUsername">Username of the Reported User:</label>
+                <input type="text" id="reportedUsername" name="reportedUsername" required>
+        
+                <label for="reason">Reason for Report:</label>
+                <select id="reason" name="reason" onchange="toggleOtherInput()" required>
+                    <option value="inappropriateContent">Inappropriate Content</option>
+                    <option value="harassment">Harassment</option>
+                    <option value="spam">Spam</option>
+                    <option value="impersonation">Impersonation</option>
+                    <option value="violence">Violent or Threatening Behavior</option>
+                    <option value="scam">Scam or Fraud</option>
+                    <option value="copyrightViolation">Copyright Violation</option>
+                    <option value="other">Other (Specify in Details)</option>
+                </select>
 
-<div class="profile-container">
-  <div class="picture-container">
-    <label for="profile-image" class="profile-image-container">
-        <img id="preview-image" src="img/profile.png" alt="Profile Image">
-        <input type="file" id="profile-image" accept="image/*" onchange="previewImage(event)">
-        <div class="hover-message">Change Profile</div>
-    </label>
-
-    <h2>User Name&nbsp;</h2>
-    <!--<h4>@username</h4>-->
-  </div>
-
-  <div class="detail_container">
-    <div class="details">
-      <h3 class="profile-subheader">Personal Details</h3>
-      <div class="user-info">
-        <div class="label">Name:</div>
-        <div class="info">JohnDoe</div>
-      </div>
-      
-      <div class="user-info">
-          <div class="label">Gender:</div>
-          <div class="info">Male</div>
-      </div>
-
-      <div class="user-info">
-        <div class="label">Location:</div>
-        <div class="info">Quezon City</div>
+                <div id="otherInput" class="hidden">
+                    <label for="otherReason">Please specify:</label>
+                    <input type="text" id="otherReason" name="otherReason">
+                </div>
+        
+                <label for="details">Details of the Incident:</label>
+                <textarea id="details" name="details" rows="4" required></textarea>
+        
+                <label for="yourUsername">Your Username (if you wish to provide it):</label>
+                <input type="text" id="yourUsername" name="yourUsername">
+        
+                <label for="yourEmail">Your Email (if you wish to be contacted for follow-up):</label>
+                <input type="email" id="yourEmail" name="yourEmail">
+        
+                <label for="attachment">Upload Screenshots or Supporting Documents:</label>
+                <input type="file" id="attachment" name="attachment">
+        
+                <input type="submit" name="submit" class="button-link" value="Submit Report">
+           </form>
         </div>
-
-        <div class="user-info">
-            <div class="label">Contact Number:</div>
-            <div class="info">09*******11</div>
-        </div>
-
-    </div>
-
-    <div class="details">
-      <h3 class="profile-subheader">Account Credentials</h3>
-      <div class="user-info">
-          <div class="label">Email:</div>
-          <div class="info">john.doe@example.com</div>
-      </div>
-
-      <div class="user-info">
-        <div class="label">Password:</div>
-        <div class="info">*******</div>
-    </div>
-
-    <div class="user-info">
-      <div class="label">ID Type:</div>
-      <div class="info">Passport</div>
-  </div>
-
-  <div class="user-info">
-    <div class="label">ID Number:</div>
-    <div class="info">F342*******</div>
-</div>
-    </div>
-  </div>
+     </div>
 </div>
 
 <footer class="footer">

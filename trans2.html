@@ -12,6 +12,7 @@
    <script src="js/main-out.js" defer></script>
    <script src="js/trans.js" defer></script>
    <script src="js/filter.js" defer></script>
+   <script src="js/cookies.js" defer></script>
    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
    <link rel="icon" href="img/Logo.svg">
@@ -59,8 +60,8 @@
                 <li class="header-icon dropdown">
                     <a href="#" class="icon-profile"><i class="fa-solid fa-user"></i></a>
                         <div class="dropdown-content">
-                            <a class="profile-opt" href="userAcc.html">Account</a>
-                            <a class="profile-opt" href="trans2.html">Transactions</a>
+                            <a class="profile-opt" id="accountLink" href="#">Account</a>
+                            <a class="profile-opt" id="transLink" href="#">Transactions</a>
                             <a class="profile-opt" href="signin.html">Logout</a>
                         </div>
                 </li>
@@ -138,14 +139,56 @@
             <div class="transaction-cards">
                 <div class="trans">
                     <div class="trans-img">
-                        <img src="img/products/bunk1.png" alt="Item 1" style="width: 100%;">
+                        <img src="img/products/cabinet1.png" alt="Item 1" style="width: 100%;">
                     </div>
 
                     <div class="trans-details">
                         <div class="details">
-                            <h3>Bunk Bed</h3>
-                            <p>Buyer: Hannah</p>
-                            <p>Amount: Php 3,550.00</p>
+                            <h3>Pre-loved Cabinet</h3>
+                            <p>Buyer: Grace P</p>
+                            <p>Amount: Php 3,450.00</p>
+                            <p class="status">Status: Pending</p>
+                        </div>
+                        <div class="trans-btns">
+                            <button class="mark_as_sold" onclick="handleMarkAsSold(this)">Item Sold</button>
+                            <button class="cancel" onclick="handleCancel(this)">Cancel</button>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="trans">
+                    <div class="trans-img">
+                        <img src="img/products/bed1.png" alt="Item 1" style="width: 100%;">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3>Single Bed</h3>
+                            <p>Buyer: Princess Sarah</p>
+                            <p>Amount: Php 1,200.00</p>
+                            <p class="status">Status: Processing</p>
+                        </div>
+                        <div class="trans-btns">
+                            <button class="mark_as_sold" onclick="handleMarkAsSold(this)">Item Sold</button>
+                            <button class="cancel" onclick="handleCancel(this)">Cancel</button>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="trans">
+                    <div class="trans-img">
+                        <img src="img/products/book1.png" alt="Item 1" style="width: 100%;">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3>Assorted Grade 6 Books</h3>
+                            <p>Buyer: Ghoms</p>
+                            <p>Amount: Php 480.00</p>
                             <p class="status">Status: Pending</p>
                         </div>
                         <div class="trans-btns">
@@ -159,14 +202,29 @@
 
                 <div class="trans-done">
                     <div class="trans-img">
-                        <img src="img/products/tennis1.png" alt="Item 1" style="width: 100%;">
+                        <img src="img/products/bunk1.png" alt="Item 1" style="width: 100%;">
                     </div>
 
                     <div class="trans-details">
                         <div class="details">
-                            <h3>Tennis Materials</h3>
+                            <h3>Bunk Bed</h3>
+                            <p>Buyer: Angia</p>
+                            <p>Amount: Php 3,550.00</p>
+                            <p>Status: SOLD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trans-done">
+                    <div class="trans-img">
+                        <img src="img/products/earring1.png" alt="Item 1" style="width: 100%;">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3>Pandora Earrings</h3>
                             <p>Buyer: Joanna</p>
-                            <p>Amount: Php 1,750.00</p>
+                            <p>Amount: Php 5,750.00</p>
                             <p>Status: SOLD</p>
                         </div>
                     </div>

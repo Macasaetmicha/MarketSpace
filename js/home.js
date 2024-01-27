@@ -26,3 +26,34 @@ function showSlides() {
   
   setTimeout(showSlides, 5000); 
 }
+
+function getUserType() {
+  var cookies = document.cookie.split('; ');
+  for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].split('=');
+      if (cookie[0] === 'userType') {
+          return decodeURIComponent(cookie[1]);
+      }
+  }
+  return null;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  var currentItemCards = document.querySelectorAll('.current-item-card');
+  var userType = getUserType();
+
+  currentItemCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        if (userType === 'buyer') {
+          console.log("BUYER LINK SET");
+          window.location.href = 'trans.html';
+        } else if (userType === 'seller') {
+          console.log("SELLER LINK SET");
+          window.location.href = 'trans2.html';
+        } else {
+            console.log("Unknown user type or not logged in.");
+            window.location.href = '#';
+        }
+      });
+  });
+});

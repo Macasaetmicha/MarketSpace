@@ -12,6 +12,8 @@
    <script src="js/main-out.js" defer></script>
    <script src="js/trans.js" defer></script>
    <script src="js/filter.js" defer></script>
+   <script src="js/cookies.js" defer></script>
+   <script src="js/popup.js" defer></script>
    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
    <link rel="icon" href="img/Logo.svg">
@@ -59,8 +61,8 @@
                 <li class="header-icon dropdown">
                     <a href="#" class="icon-profile"><i class="fa-solid fa-user"></i></a>
                         <div class="dropdown-content">
-                            <a class="profile-opt" href="userAcc.html">Account</a>
-                            <a class="profile-opt" href="trans2.html">Transactions</a>
+                            <a class="profile-opt" id="accountLink" href="#">Account</a>
+                            <a class="profile-opt" id="transLink" href="#">Transactions</a>
                             <a class="profile-opt" href="signin.html">Logout</a>
                         </div>
                 </li>
@@ -89,90 +91,178 @@
 
         <div class="transactions">
             <div class="transaction-cards">
-                <div class="trans">
+
+                <div class="trans-item-card item-card" id="transCard1" data-product-id="1">
                     <div class="trans-img">
-                        <img src="img/products/bed1.png" alt="Item 1" style="width: 100%;">
+                        <img src="" alt="Item 1">
                     </div>
 
                     <div class="trans-details">
                         <div class="details">
-                            <h3>Single Bed</h3>
-                            <p>Seller: Samantha</p>
-                            <p>Amount: Php 1,200.00</p>
-                            <p>Date: 01/24/24</p>
-                            <p class="status">Status: Processing</p>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="trans">
-                    <div class="trans-img">
-                        <img src="img/products/lamp1.png" alt="Item 1" style="width: 100%;">
-                    </div>
-
-                    <div class="trans-details">
-                        <div class="details">
-                            <h3>Nordic Lamp</h3>
-                            <p>Seller: JoJo</p>
-                            <p>Amount: Php 320.00</p>
-                            <p>Date: 01/20/24</p>
-                            <p class="status">Status: Processing</p>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="trans">
-                    <div class="trans-img">
-                        <img src="img/products/shoes1.png" alt="Item 1" style="width: 100%;">
-                    </div>
-
-                    <div class="trans-details">
-                        <div class="details">
-                            <h3>Assorted Pre-loved Shoes</h3>
-                            <p>Seller: Jepoy</p>
-                            <p>Amount: Php 550.00</p>
-                            <p>Date: 01/19/24</p>
-                            <p class="status">Status: Pending</p>
-                        </div>
-                    </div>
-                    
-                </div>
-
-                <div class="trans-done">
-                    <div class="trans-img">
-                        <img src="img/products/earring1.png" alt="Item 1" style="width: 100%;">
-                    </div>
-
-                    <div class="trans-details">
-                        <div class="details">
-                            <h3>Pandora Earrings</h3>
-                            <p>Seller: Mary Rose</p>
-                            <p>Amount: Php 5,750.00</p>
-                            <p>Date: 01/14/24</p>
-                            <p>Status: SOLD</p>
+                            <h3></h3>
+                            <p>Date: </p>
+                            <p>Status: </p>
+                            <h3 class="price"></h3>
                         </div>
                     </div>
                 </div>
 
-                <div class="trans-done">
+                <div class="trans-item-card item-card" id="transCard2" data-product-id="2">
                     <div class="trans-img">
-                        <img src="img/products/watergun1.png" alt="Item 1" style="width: 100%;">
+                        <img src="" alt="Item 1">
                     </div>
 
                     <div class="trans-details">
                         <div class="details">
-                            <h3>Assorted Watergun</h3>
-                            <p>Seller: Maria</p>
-                            <p>Amount: Php 340.00</p>
-                            <p>Date: 12/28/23</p>
-                            <p>Status: CANCELLED</p>
+                            <h3></h3>
+                            <p>Date: </p>
+                            <p>Status: </p>
+                            <h3 class="price"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trans-item-card item-card" id="transCard3" data-product-id="6">
+                    <div class="trans-img">
+                        <img src="" alt="Item 1">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3></h3>
+                            <p>Date: </p>
+                            <p>Status: </p>
+                            <h3 class="price"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trans-item-card item-card" id="transCard4" data-product-id="13">
+                    <div class="trans-img">
+                        <img src="" alt="Item 1">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3></h3>
+                            <p>Date: </p>
+                            <p>Status: </p>
+                            <h3 class="price"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trans-item-card item-card" id="transCard5" data-product-id="9">
+                    <div class="trans-img">
+                        <img src="" alt="Item 1">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3></h3>
+                            <p>Date: </p>
+                            <p>Status: </p>
+                            <h3 class="price"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trans-item-card done" id="doneCard1" data-product-id="4">
+                    <div class="trans-img">
+                        <img src="" alt="Item 1">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3></h3>
+                            <p>Date: </p>
+                            <p>Status: </p>
+                            <h3 class="price"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trans-item-card done" id="doneCard2" data-product-id="7">
+                    <div class="trans-img">
+                        <img src="" alt="Item 1">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3></h3>
+                            <p>Date: </p>
+                            <p>Status: </p>
+                            <h3 class="price"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trans-item-card done" id="doneCard3" data-product-id="15">
+                    <div class="trans-img">
+                        <img src="" alt="Item 1">
+                    </div>
+
+                    <div class="trans-details">
+                        <div class="details">
+                            <h3></h3>
+                            <p>Date: </p>
+                            <p>Status: </p>
+                            <h3 class="price"></h3>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="item-details-popup" id="itemDetailsPopup">
+            <div class="popup-header">
+            <button class="close-button" onclick="closeItemDetails()" id="closePopupButton">&times;</button>
+            </div>
+            <div class="popup-content-wrapper" id="popupContentWrapper">
+            <div class="pop-up-slideshow-container">
+                <div class="popUpSlides fade">
+                    <img src="img/table1.png" alt="Item 1" style="width: 100%;">
+                </div>
+    
+                <div class="popUpSlides fade">
+                    <img src="img/table2.png" alt="Item 2" style="width: 100%;">
+                </div>
+                
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+            <div class="product-details">
+                
+                <div class="product-info">
+                    <h3 class="product-name"></h3>
+                    <h4 class="price"></h4>
+                </div>
+    
+                <div class="left-details">
+                    <p class="prod-detail">Qty:</p>
+                    <p class="prod-detail">Category:</p>
+                    <p class="prod-detail">Condition:</p>
+                    <p class="prod-detail">Brand/Manufacturer:</p>
+                    <p class="prod-detail">Available for Bulk Order</p>
+                    <p class="prod-detail">Product Description:</p>
+                </div>
+    
+                <div class="right-details">
+                    <div class="seller-info">
+                        <div class="seller-details">
+                            <a href="view_user2.html" class="seller-name seller-name">
+                                <p class="seller-name">Seller Name</p>
+                            </a>
+                            <p class="location">Makati City</p>
+                        </div>
+                        <a href="view_user2.html" class="seller-link">
+                            <img src="img/user5.png" alt="Seller Image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
 
     </div>
 

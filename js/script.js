@@ -48,14 +48,50 @@ function login() {
     var email = document.getElementById('email').value;
     var pass = document.getElementById('password').value;
 
-    if (email == 'michaelamacasaet@gmail.com' && pass == 'Mica123'){
-        alert("Login Success")
+    if (email === 'buyer@gmail.com' && pass === 'buyer123') {
+        alert("Login Success as Buyer");
+        setCookie('userType', 'buyer');
         window.location.assign("home2.html");
-    }else{
-        alert("Wrong entry, please check input.")
+    } else if (email === 'seller@gmail.com' && pass === 'seller123') {
+        alert("Login Success as Seller");
+        setCookie('userType', 'seller');
+        window.location.assign("home2.html");
+    } else {
+        alert("Email or Password is incorrect.");
     }
 
+    function setCookie(name, value) {
+        document.cookie = name + '=' + encodeURIComponent(value) + '; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
+    }
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var today = new Date();
+
+    var minBirthdate = new Date(today.getFullYear() - 15, today.getMonth(), today.getDate() + 1);
+
+    var minBirthdateFormatted = minBirthdate.toISOString().split('T')[0];
+
+    document.getElementById('bday').setAttribute('max', minBirthdateFormatted);
+
+    document.getElementById('bday').addEventListener('change', function() {
+      
+      var selectedDate = new Date(this.value);
+      var today = new Date();
+      var age = today.getFullYear() - selectedDate.getFullYear();
+
+     
+      if (age < 18) {
+      
+        document.getElementById('studentOpt').style.display = 'block';
+      } else {
+      
+        document.getElementById('studentOpt').style.display = 'none';
+      }
+    });
+  });
 
 function formatPhoneNumber(input) {
     const phoneNumber = input.value.replace(/\D/g, '');
@@ -107,8 +143,6 @@ function signup() {
 }
 
 function forgot() {
-    console.log("Redirecting to the home page.");
-
     alert("Email was sent to change password.");
     window.location.assign("change_pass.html");
 }

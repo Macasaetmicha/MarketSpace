@@ -122,6 +122,7 @@ h2{
     display: block;
     box-sizing: border-box;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    resize: vertical;
 }
 
 .radio-buttons{
@@ -136,6 +137,25 @@ h2{
 
 .radio-buttons input {
     margin-right: 5px;
+}
+
+.form-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.detail1, .detail2{
+    width: 50%;
+    margin-top: 30px;
+}
+
+.detail1 label, .detail2 label{
+    width: 40%;
+}
+
+.detail1 input, .detail2 select{
+    width: 60%;
+    box-sizing: border-box;
 }
 
 .account-type label {
@@ -275,7 +295,7 @@ a.button-link:hover, .button-link:hover {
     width: 100%;
 }
 
-.forgot-container, .change-container {
+.forgot-container, .change-container, .report-container {
     display: flex;
     max-width: 40%;
     margin: auto; 
@@ -286,7 +306,11 @@ a.button-link:hover, .button-link:hover {
     margin-bottom: 10vw;
 }
 
-.forgot-form, .change-form {
+.report-container{
+    max-width: 70%;
+}
+
+.forgot-form, .change-form, .report-form {
     flex: 1;
     padding: 3vw;
     background-color: #F1F4F5;
@@ -294,33 +318,56 @@ a.button-link:hover, .button-link:hover {
     border: 2vw solid #6D86D9;
 }
 
-.forgot-form form, .change-form form{
+.forgot-form form, .change-form form, .report-form form{
     text-align: left;
     display: flex;
     flex-direction: column;
 }
 
-.forgot-form h2, .change-form h2 {
+.forgot-form h2, .change-form h2, .report-form h2 {
     margin-bottom: 0px;
 }
 
-.forgot-form p, .change-form p  {
+.forgot-form p, .change-form p, .report-form p {
     color: #8e8e8e;
     font-size: 1.2vw;
     margin-top: .5vw;
 }
 
-.forgot-form label, .change-form label  {
+.forgot-form label, .change-form label, .report-form label, #otherReason label{
     margin-top: 1vw;
 }
 
-.forgot-form input, .change-form input {
+.forgot-form input, .change-form input, .report-form input, #otherReason input{
     padding: 1vw;
     margin-top: .4vw;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
+#otherReason{
+    min-width: 75%;
+}
+
+#otherInput{
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.report-form textarea{
+    resize: vertical;
+    padding: 1vw;
+    margin-top: .4vw;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.report-form .button-link{
+    margin-top: 4vh;
+}
 .terms{
     display: flex;
     flex-direction: row;
@@ -390,11 +437,11 @@ a.button-link:hover, .button-link:hover {
         min-height: 100vh
     }
 
-    .forgot-container, .change-container {
+    .forgot-container, .change-container, .report-container {
         max-width: 80%; 
     }
 
-    .forgot-form, .change-form {
+    .forgot-form, .change-form, .report-form{
         padding: 2vw; 
     }
 
@@ -420,21 +467,25 @@ a.button-link:hover, .button-link:hover {
         justify-items: center;
     }
     
-    .forgot-form p, .change-form p  {
+    .forgot-form p, .change-form p, .report-form p  {
         color: #8e8e8e;
         font-size: 2.5vw;
         margin-top: 2vw;
     }
     
-    .forgot-form label, .change-form label  {
+    .forgot-form label, .change-form label, .report-form label {
         margin-top: 5vw;
         font-size: 3vw;
     }
     
-    .forgot-form input, .change-form input {
+    .forgot-form input, .change-form input, .report-form input {
         padding: 1vw;
         margin-top: 2vw;
         font-size: 3vw;
+    }
+
+    #otherReason{
+        min-width: 50%;
     }
 
     a.button-link, .button-link, input[type="submit"] {
@@ -486,6 +537,27 @@ a.button-link:hover, .button-link:hover {
     .radio-buttons label{
         margin-top: 1.2vw;
         margin-left: 1.2vw;
+    }
+
+    .form-row{
+        flex-direction: column;
+    }
+
+    .detail1, .detail2{
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    .detail1 label, .detail2 label{
+        width: 100%;
+    }
+    
+    .detail1 input{
+        width: 100%;
+    }
+
+    .detail2 select{
+        width: 100%;
     }
 
 }

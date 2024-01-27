@@ -476,6 +476,19 @@
     text-align: left;
 }
 
+body h2{
+    color: #F1F4F5;
+}
+
+.report-user{
+    text-decoration: none;
+    color:#F1F4F5;
+}
+
+.report{
+    margin-top: 1vh;
+}
+
 @media screen and (max-width: 800px) {
     .navbar {
         flex-direction: column;

@@ -289,14 +289,11 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="seller">
         <div class="seller-info">
           <div class="seller-details">
-            <a href="view_user2.html" class="seller-name seller-name">
-              <p class="seller-name">${details.seller}</p>
-            </a>
+            <p class="seller-name">${details.seller}</p>
             <p class="location">${details.seller_loc}</p>
           </div>
-          <a href="view_user2.html" class="seller-link">
-            <img src="${details.seller_pic}" alt="Seller Image">
-          </a>
+        
+          <img src="${details.seller_pic}" alt="Seller Image">
         </div>
       </div>
     `;
@@ -312,12 +309,24 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+function getUserType() {
+  var cookies = document.cookie.split('; ');
+  for (var i = 0; i < cookies.length; i++) {
+      var cookie = cookies[i].split('=');
+      if (cookie[0] === 'userType') {
+          return decodeURIComponent(cookie[1]);
+      }
+  }
+  return null;
+}
+
+var ImgLink = document.getElementById('recipient-img-link');
+var NameLink = document.getElementById('recipient-name-link'); 
 
 document.addEventListener('DOMContentLoaded', function() {
     var regularItemCards = document.querySelectorAll('.msg-card');
     var msgPopup = document.getElementById('msgPopup');
     var closePopupButton = document.getElementById('closePopupButton');
-    var Popup = document.getElementById('msgPopup');
   
     regularItemCards.forEach(function(card) {
       card.addEventListener('click', function() {
@@ -331,45 +340,16 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log('Showing Messages');
       msgPopup.style.display = 'block';
 
-      Popup.innerHTML = `
-            <div class="msg-content-wrapper" id="msgContentWrapper">
-            <div class="msg-header">
-                <div class="receiver">
-                    <div class="receiver-info" id="receiver-info">
-                        <a href="view_user2.html" class="receiver-link">
-                            <img src="${details.seller_pic}" alt="Seller Image">
-                        </a>
+      var currentCard = this;
+     
+      NameLink.innerHTML = `
+        <h1 class="receiver-name">${details.seller}</h1>      
+      `;
 
-                        <div class="receiver-details">
-                            <a href="view_user2.html" class="receiver-name receiver-name">
-                                <h1 class="receiver-name">${details.seller}</h1>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="close">
-                    <button class="close-button" onclick="closeItemDetails()" id="closePopupButton">&times;</button>
-                </div>
-            </div>
-            
-            <div class="message-section" id="message-section">
-                <div class="message" id="receipient">
-                    <span id="receipient-response">Hi! Welcome to my shop! Please send us a message and I will get back to you as soon as I can. Thank you!</span>
-                </div>
-            </div>
-
-            <div class="input-section" id="input-section">
-                <input id="input" type="text" placeholder="Type a message" autocomplete="off" autofocus="autofocus"/>
-                <button class="send" onclick="sendMessage()">
-                    <div class="circle"><i class="zmdi zmdi-mail-send"></i></div>
-                </button>
-            </div>
-            
-            
-        </div>
-      `
-
+      ImgLink.innerHTML = `
+        <img src="${details.seller_pic}" alt="Seller Image">
+      `;
+      
       if (closePopupButton) {
         closePopupButton.addEventListener('click', function() {
             closeItemDetails();
@@ -381,8 +361,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getItemDetailsById(productId) {
       return productDetails[productId] || {};
-  }
-  
+    }
 });
 
 const synth = window.speechSynthesis;

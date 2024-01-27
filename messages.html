@@ -13,6 +13,7 @@
    <script src="js/main.js" defer></script>
    <script src="js/msg.js" defer></script>
    <script src="js/filter.js" defer></script>
+   <script src="js/cookies.js" defer></script>
    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
    <link rel="icon" href="img/Logo.svg">
@@ -60,8 +61,8 @@
                 <li class="header-icon dropdown">
                     <a href="#" class="icon-profile"><i class="fa-solid fa-user"></i></a>
                         <div class="dropdown-content">
-                            <a class="profile-opt" href="userAcc.html">Account</a>
-                            <a class="profile-opt" href="trans2.html">Transactions</a>
+                            <a class="profile-opt" id="accountLink" href="#">Account</a>
+                            <a class="profile-opt" id="transLink" href="#">Transactions</a>
                             <a class="profile-opt" href="signin.html">Logout</a>
                         </div>
                 </li>
@@ -102,7 +103,7 @@
 
         <div class="messages" id="messages">
             <div class="message-cards">
-                <div class="msg msg-card" data-product-id="6">
+                <div id="msg-card" class="msg msg-card" data-product-id="6">
                     <div class="details">
                         <h3></h3>
                         <p></p>
@@ -112,20 +113,16 @@
                     <div class="seller">
                         <div class="seller-info">
                             <div class="seller-details">
-                                <a href="view_user2.html" class="seller-name seller-name">
-                                    <p class="seller-name"></p>
-                                </a>
+                                <p class="seller-name"></p>
                                 <p class="location"></p>
                             </div>
-        
-                            <a href="view_user2.html" class="seller-link">
-                                <img src="" alt="Seller Image">
-                            </a>
+                            
+                            <img src="" alt="Seller Image">
                         </div>
                     </div>
                 </div>
 
-                <div class="msg msg-card" data-product-id="12">
+                <div id="msg-card" class="msg msg-card" data-product-id="12">
                     <div class="details">
                         <h3></h3>
                         <p></p>
@@ -135,20 +132,16 @@
                     <div class="seller">
                         <div class="seller-info">
                             <div class="seller-details">
-                                <a href="view_user2.html" class="seller-name seller-name">
-                                    <p class="seller-name"></p>
-                                </a>
+                                <p class="seller-name"></p>
                                 <p class="location"></p>
                             </div>
-        
-                            <a href="view_user2.html" class="seller-link">
-                                <img src="" alt="Seller Image">
-                            </a>
+                            
+                            <img src="" alt="Seller Image">
                         </div>
                     </div>
                 </div>
 
-                <div class="msg msg-card" data-product-id="9">
+                <div id="msg-card" class="msg msg-card" data-product-id="9">
                     <div class="details">
                         <h3></h3>
                         <p></p>
@@ -158,20 +151,16 @@
                     <div class="seller">
                         <div class="seller-info">
                             <div class="seller-details">
-                                <a href="view_user2.html" class="seller-name seller-name">
-                                    <p class="seller-name"></p>
-                                </a>
+                                <p class="seller-name"></p>
                                 <p class="location"></p>
                             </div>
-        
-                            <a href="view_user2.html" class="seller-link">
-                                <img src="" alt="Seller Image">
-                            </a>
+                            
+                            <img src="" alt="Seller Image">
                         </div>
                     </div>
                 </div>
 
-                <div class="msg msg-card" data-product-id="7">
+                <div id="msg-card" class="msg msg-card" data-product-id="7">
                     <div class="details">
                         <h3></h3>
                         <p></p>
@@ -181,18 +170,15 @@
                     <div class="seller">
                         <div class="seller-info">
                             <div class="seller-details">
-                                <a href="view_user2.html" class="seller-name seller-name">
-                                    <p class="seller-name"></p>
-                                </a>
+                                <p class="seller-name"></p>
                                 <p class="location"></p>
                             </div>
-        
-                            <a href="view_user2.html" class="seller-link">
-                                <img src="" alt="Seller Image">
-                            </a>
+                            
+                            <img src="" alt="Seller Image">
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -201,12 +187,12 @@
                 <div class="msg-header">
                     <div class="receiver">
                         <div class="receiver-info" id="receiver-info">
-                            <a href="view_user2.html" class="receiver-link">
+                            <a id="recipient-img-link" href="#" class="receiver-link">
                                 <img src="img/user5.png" alt="Seller Image">
                             </a>
         
                             <div class="receiver-details">
-                                <a href="view_user2.html" class="receiver-name receiver-name">
+                                <a id="recipient-name-link" href="#" class="receiver-name receiver-name">
                                     <h1 class="receiver-name">Receiver Name</h1>
                                 </a>
                             </div>
@@ -218,7 +204,7 @@
                     </div>
                 </div>
                 
-                <div class="message-section" id="message-section">
+                <div class="message-section" id="message-section" data-product-id="">
                     <div class="message" id="receipient">
                         <span id="receipient-response">Hi! Welcome to my shop! Please send us a message and I will get back to you as soon as I can. Thank you!</span>
                     </div>

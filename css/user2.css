@@ -477,6 +477,19 @@
     padding-left: 20px;
 }
 
+.right-details{
+    display: none;
+}
+
+.report-user{
+    text-decoration: none;
+    color:#333;
+}
+
+.report{
+    margin-top: 3vh;
+}
+
 @media screen and (max-width: 800px) {
     .navbar {
         flex-direction: column;

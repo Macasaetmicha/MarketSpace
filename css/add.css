@@ -93,6 +93,10 @@ input, select, textarea {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
+textarea{
+    resize: vertical;
+}
+
 select{
     appearance: none; 
     -webkit-appearance: none; 
@@ -171,6 +175,7 @@ select{
 
 .add-card .drag-area .visible {
     font-size: 18px;
+    text-align: center;
 }
 .add-card .select {
     color: #5256ad;

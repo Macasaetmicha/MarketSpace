@@ -92,6 +92,11 @@ function signup() {
         return;
     }
 
+    if (pass.length < 8 || !/[A-Z]/.test(pass) || !/[a-z]/.test(pass) || !/\d/.test(pass) || !/[!@#$%^&*(),.?":{}|<>]/.test(pass)) {
+        alert("Password must meet the following criteria:\n- At least 8 characters\n- Contains uppercase letters, lowercase letters, numbers, and symbols");
+        return false;
+    }
+
     if (pass !== confirmPass) {
         alert("Password and confirm password do not match.");
         return;
@@ -99,4 +104,31 @@ function signup() {
 
     alert("Login Success");
     window.location.assign("home2.html");
+}
+
+function forgot() {
+    console.log("Redirecting to the home page.");
+
+    alert("Email was sent to change password.");
+    window.location.assign("change_pass.html");
+}
+
+function change_pass() {
+    console.log("Redirecting to the home page.");
+    var pass = document.getElementById('password').value;
+    var confirmPass = document.getElementById('c_password').value;
+
+    if (pass.length < 8 || !/[A-Z]/.test(pass) || !/[a-z]/.test(pass) || !/\d/.test(pass) || !/[!@#$%^&*(),.?":{}|<>]/.test(pass)) {
+        alert("Password must meet the following criteria:\n- At least 8 characters\n- Contains uppercase letters, lowercase letters, numbers, and symbols");
+        return false;
+    }
+
+    if (pass !== confirmPass) {
+        alert("Password and confirm password do not match.");
+        return;
+    } 
+
+    alert("Passwrod changed successfully.");
+    window.location.assign("signin.html");
+
 }

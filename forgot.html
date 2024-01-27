@@ -10,6 +10,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
    <script src="js/main-out.js" defer></script>
+   <script src="js/script.js" defer></script>
 
    <link rel="icon" href="img/Logo.svg">
 </head>
@@ -40,11 +41,11 @@
          <div class="forgot-form">
             <h2>Forgot Password</h2>
             <p>No worries! It happens to the best of us. Enter the email address associated with your account, and we'll help you reset your password.</p>
-            <form>
+            <form class="forgot" id="forgotForm" onsubmit="forgot(); return false;">
                <label for="email">Email:</label>
-               <input type="email" id="email" name="email" placeholder="Enter your Email">
+               <input type="email" id="email" name="email" placeholder="Enter your Email" required>
    
-               <a href="change_pass.html" class="button-link">Send</a>
+               <input type="submit" name="submit" class="button-link" value="Send">
             </form>
          </div>
       </div>

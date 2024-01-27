@@ -61,7 +61,7 @@ header{
     padding: 14px 16px;
     text-decoration: none;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    align-items: baseline;
+    align-items: center;
 }
 
 .navbar a:hover {
@@ -81,8 +81,8 @@ s
     margin-left: 10px;
 }
 
-.fa-solid{
-    font-size: 24px;
+.navbar .fa-solid{
+    font-size:x-large;
     filter: drop-shadow(5px 5px 2px rgba(0, 0, 0, 0.3));
 }
 
@@ -91,7 +91,7 @@ span{
 }
 
 .company-name {
-    font-size: 20px; 
+    font-size:large; 
     margin-left: 10px;
 }
 

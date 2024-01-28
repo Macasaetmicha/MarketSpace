@@ -327,6 +327,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var regularItemCards = document.querySelectorAll('.msg-card');
     var msgPopup = document.getElementById('msgPopup');
     var closePopupButton = document.getElementById('closePopupButton');
+    var recipientResponse = document.getElementById('receipient-response').textContent;
   
     regularItemCards.forEach(function(card) {
       card.addEventListener('click', function() {
@@ -339,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var details = getItemDetailsById(productId);
       console.log('Showing Messages');
       msgPopup.style.display = 'block';
-
+      voiceControl(recipientResponse)
       var currentCard = this;
      
       NameLink.innerHTML = `

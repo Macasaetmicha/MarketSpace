@@ -308,7 +308,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var cardContentWrapper = this;
     var images = details.images || [];
 
-    // Customize content based on the page identifier
     var content = '';
     if (pageIdentifier === 'trans') {
       content = `
@@ -372,7 +371,6 @@ document.addEventListener('DOMContentLoaded', function() {
       var details = getItemDetailsById(productId);
       var images = details.images || []; 
 
-      // Dynamically generate slides for each image
       var slidesHtml = images.map(function (image) {
           return `<div class="popUpSlides fade">
                       <img src="${image}" alt="${details.name}" style="width: 100%;">
@@ -416,16 +414,14 @@ document.addEventListener('DOMContentLoaded', function() {
               <button class="popup-button" onclick="redirect()">I am Interested!</button>
           </div>
       `;
+
       itemDetailsPopup.style.display = 'block';
       showProd(popUpslideIndex);
 
-    // Check if the body has the class or attribute indicating page 1
         if (window.location.href.includes('userAcc2.html')) {
-            // Hide the "I am Interested" button for page 1
             document.querySelector('.popup-button').style.display = 'none';
         }
-
-
+        
       if (closePopupButton) {
           closePopupButton.addEventListener('click', function() {
               closeItemDetails();

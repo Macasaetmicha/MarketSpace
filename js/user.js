@@ -36,3 +36,25 @@ document.addEventListener('DOMContentLoaded', function () {
         ratingContainer.appendChild(star);
       }
 });
+
+function checkUser(){
+    const userTypeCookie = getUserType();
+
+    if (userTypeCookie) {
+      window.location.assign("report.html");
+    } else {
+      alert('Oops! You have to be logged in to make a report!');
+      window.location.assign("signin.html");
+    }
+}
+
+function getUserType() {
+    var cookies = document.cookie.split('; ');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].split('=');
+        if (cookie[0] === 'userType') {
+            return decodeURIComponent(cookie[1]);
+        }
+    }
+    return null;
+}

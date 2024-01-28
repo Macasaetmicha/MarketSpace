@@ -15,6 +15,7 @@ function setAccountLink() {
     /*NavBar*/
     var accountLink = document.getElementById('accountLink');
     var transLink = document.getElementById('transLink');
+    var notifLink1 = document.getElementById('notif1');
 
     /*Messages*/
     var ImgLink = document.getElementById('recipient-img-link');
@@ -24,6 +25,7 @@ function setAccountLink() {
         console.log("BUYER LINK SET");
         accountLink.href = 'userAcc.html';
         transLink.href = 'trans.html';
+        notifLink1.href = 'trans.html';
         ImgLink.href = 'view_user2.html';
         NameLink.href = 'view_user2.html';
 
@@ -31,15 +33,22 @@ function setAccountLink() {
         console.log("SELLER LINK SET");
         accountLink.href = 'userAcc2.html';
         transLink.href = 'trans2.html';
+        notifLink1.href = 'trans2.html';
         ImgLink.href = 'view_user.html';
         NameLink.href = 'view_user.html';
     } else {
         console.log("Unknown user type or not logged in.");
         accountLink.href = '#'; 
         transLink.href = '#'; 
+        notifLink1.href = '#';
         ImgLink.href = '#'; 
         NameLink.href = '#'; 
     }
 }
 
 setAccountLink();
+
+function logout() {
+    document.cookie = "userType=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.href = "signin.html"; 
+}

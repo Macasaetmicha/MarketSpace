@@ -300,6 +300,8 @@ var productDetails = {
 document.addEventListener('DOMContentLoaded', function() {
   var transCards = document.querySelectorAll('.trans-item-card');
   var listedCards = document.querySelectorAll('.listed-item-card');
+  var newCards = document.querySelectorAll('.new-item-card');
+  var regularCards = document.querySelectorAll('.regular-item-card');
 
   function showItemDetails(productId, pageIdentifier) {
     var details = getItemDetailsById(productId);
@@ -322,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
       `;
-    } else if (pageIdentifier === 'listed') {
+    } if (pageIdentifier === 'listed') {
       content = `
         <img src="${details.thumbnail}" alt="${details.name}">
         <h3>${details.name}</h3>
@@ -345,6 +347,16 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   listedCards.forEach(function(card) {
+    var productId = card.getAttribute('data-product-id');
+    showItemDetails.call(card, productId, 'listed');
+  });
+
+  newCards.forEach(function(card) {
+    var productId = card.getAttribute('data-product-id');
+    showItemDetails.call(card, productId, 'listed');
+  });
+
+  regularCards.forEach(function(card) {
     var productId = card.getAttribute('data-product-id');
     showItemDetails.call(card, productId, 'listed');
   });

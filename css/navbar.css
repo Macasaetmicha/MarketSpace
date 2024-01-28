@@ -48,10 +48,6 @@ header{
     }
 }
 
-.navbar.scrolled a {
-    color: #F1F4F5;
-}
-
 .navbar a {
     float: left;
     display: flex;
@@ -180,6 +176,14 @@ span{
 }
 
 .navbar.scrolled .profile-opt{
+    color: black;
+}
+
+.navbar.scrolled a {
+    color: #F1F4F5;
+}
+
+.navbar.scrolled .dropdown-content a{
     color: black;
 }
 

@@ -18,60 +18,7 @@
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="mobileHeader">
-        <a href="home2.html" class="logo">
-            <i class="fa-solid fa-shop"></i>
-            <span class="company-name">
-                <span class="highlight">M</span>arket<span class="highlight">S</span>pace
-            </span>
-        </a>
-        <button onclick="openMenu()" class="hamburger">&#8801;</button>
-    </div>
-
-    <nav class="menu">
-        <ul class="nav-list">
-            <li class="nav-listItem header-icon">
-                <a href="messages.html" class="icon-envelope"><i class="fa-solid fa-envelope"></i></a>
-            </li>
-
-            <li class="header-icon dropdown">
-                <a href="#" class="icon-bell"><i class="fa-solid fa-bell"></i></a>
-                <div class="dropdown-content notifications">
-                    <div class="notification-item">
-                        <img src="img/user1.png" alt="User">
-                        <div class="notification-info">
-                            <p><strong>Transaction:</strong> Seller Marked the item as sold.</p>
-                        </div>
-                        <button class="delete-notification">X</button>
-                    </div>
-    
-                    <div class="notification-item">
-                        <img src="img/user2.png" alt="User">
-                        <div class="notification-info">
-                            <p><strong>Message:</strong> Seller1 sent you a message.</p>
-                        </div>
-                        <button class="delete-notification">X</button>
-                    </div>
-                </div>
-            </li>
-
-            <li class="header-icon dropdown">
-                <a href="#" class="icon-profile"><i class="fa-solid fa-user"></i></a>
-                    <div class="dropdown-content">
-                        <a class="profile-opt" id="accountLink" href="#">Account</a>
-                        <a class="profile-opt" id="transLink" href="#">Transactions</a>
-                        <a class="profile-opt" href="signin.html">Logout</a>
-                    </div>
-            </li>
-
-            <li class="header-icon">
-                <a href="about.html" class="icon-about"><i class="fa-solid fa-circle-info"></i></a>
-            </li>
-
-        </ul>
-    </nav>
-
+  <header class="navbar" id="dynamicNavbar">
   </header>
 
   <div class="about-us-container">

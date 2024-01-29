@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     const userTypeCookie = getUserType();
     console.log(userTypeCookie)
-    const dynamicNavbarContainer = document.getElementById("dynamicNavbar");
+    const mobileHeader = document.getElementById("mobileHeader");
+    const menu = document.getElementById("menu");
   
     if (userTypeCookie === "seller" || userTypeCookie === "buyer") {
-      dynamicNavbarContainer.innerHTML = `
-        <div class="mobileHeader">
+        mobileHeader.innerHTML = `
             <a href="home2.html" class="logo">
                 <i class="fa-solid fa-shop"></i>
                 <span class="company-name">
@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 </span>
             </a>
             <button onclick="openMenu()" class="hamburger">&#8801;</button>
-        </div>
-
-        <nav class="menu">
+        `   
+        menu.innerHTML = `   
             <ul class="nav-list">
                 <li class="nav-listItem header-icon">
                     <a href="messages.html" class="icon-envelope"><i class="fa-solid fa-envelope"></i></a>
@@ -56,13 +55,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 </li>
 
             </ul>
-        </nav>
       `;
 
       setAccountLink();
     } else {
-      dynamicNavbarContainer.innerHTML = `
-      <div class="mobileHeader">
+      mobileHeader.innerHTML = `
       <a href="index.html" class="logo">
           <i class="fa-solid fa-shop"></i>
           <span class="company-name">
@@ -70,15 +67,16 @@ document.addEventListener("DOMContentLoaded", function() {
           </span>
       </a>
      <button onclick="openMenu()" class="hamburger">&#8801;</button>
-  </div>
-  <nav class="menu">
-     <ul class="nav-list">
-        <li class="nav-listItem"><a href="index.html">Home</a></li>
-        <li><a href="signin.html">Login</a></li>
-        <li><a href="signup.html">Start Selling</a></li>
-        <li><a href="about.html" class="icon-about"><i class="fa-solid fa-circle-info"></i></a></li>         
-     </ul>
-  </nav>
+    `
+
+        menu.innerHTML = `
+            <ul class="nav-list">
+                <li class="nav-listItem"><a href="index.html">Home</a></li>
+                <li><a href="signin.html">Login</a></li>
+                <li><a href="signup.html">Start Selling</a></li>
+                <li><a href="about.html" class="icon-about"><i class="fa-solid fa-circle-info"></i></a></li>         
+            </ul>
+        </nav>
       `;
 
       setAccountLink();
